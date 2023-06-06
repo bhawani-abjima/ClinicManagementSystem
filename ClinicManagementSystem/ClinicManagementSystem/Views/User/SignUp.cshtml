@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<html>
+<div>
+    @model Users
+
+    <h2>Sign Up</h2>
+
+    @using (Html.BeginForm("SignUp", "UserController", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserEmail)
+            @Html.TextBoxFor(m => m.UserEmail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserEmail)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserType)
+            @Html.DropDownListFor(m => m.UserType, GetUserTypes(), "Select User Type", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.UserType)
+        </div>
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    }
+
+    @functions {
+        private SelectList GetUserTypes()
+        {
+            var userTypes = new List<SelectListItem>
+    {
+    new SelectListItem { Value = "Patient", Text = "Patient" },
+    new SelectListItem { Value = "Doctor", Text = "Doctor" },
+    new SelectListItem { Value = "Admin", Text = "Admin" }
+    };
+
+            return new SelectList(userTypes, "Value", "Text");
+        }
+    }
+
+
+
+</html>
