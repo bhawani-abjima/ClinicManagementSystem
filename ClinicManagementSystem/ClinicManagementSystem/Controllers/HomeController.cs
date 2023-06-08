@@ -1,9 +1,6 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using ClinicManagementSystem.Models;
-using Dapper;
+﻿using ClinicManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace ClinicManagementSystem.Controllers
 {
@@ -17,6 +14,11 @@ namespace ClinicManagementSystem.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult SignUpUser() 
         {
             return View();
         }

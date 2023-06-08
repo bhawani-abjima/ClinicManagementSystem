@@ -1,29 +1,25 @@
-﻿using ClinicManagementSystem.Models;
+﻿using ClinicManagementSystem.Contracts;
+using ClinicManagementSystem.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using static ClinicManagementSystem.Contracts.IUserRepository;
 
-
-[Route("api/[controller]")]
-[ApiController]
-public class UserController : Controller
+namespace ClinicManagementSystem.Controllers
 {
-    private readonly UserRepository _userRepository;
-
-    public UserController(UserRepository userRepository)
+    public class UserController : Controller
     {
-        _userRepository = userRepository;
-    }
-
-    [HttpPost]
-    public IActionResult CreateUser(UserModelClass user)
-    {
-        try
+        
+        private readonly IUserRepository _userRepository;
+        public UserController(IUserRepository userRepository)
         {
-            _userRepository.CreateUser(user);
-            return Ok("User created successfully");
+            _userRepository = userRepository;
         }
-        catch (Exception ex)
+
+        public  Task<Boolean> SignUpUser(UserModel user)
         {
-            return BadRequest(ex.Message);
+  
+            var result = _userRepository.AddAsync(user);
+            return result;
         }
     }
 }

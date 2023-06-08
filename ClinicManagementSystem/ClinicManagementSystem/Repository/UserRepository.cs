@@ -1,36 +1,46 @@
-﻿using ClinicManagementSystem.Models;
-using Microsoft.Extensions.DependencyInjection;
+﻿using ClinicManagementSystem.Connection;
+using ClinicManagementSystem.Contracts;
+using ClinicManagementSystem.Models;
 using Dapper;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Configuration;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using static ClinicManagementSystem.Models.UserModelClass;
 
-public class UserRepository
+namespace ClinicManagementSystem.Repository
 {
-    private readonly string connectionString;
-
-    public UserRepository(string connectionString)
+    public class UserRepository: IUserRepository
     {
-        this.connectionString = connectionString;
-    }
-
-    public void CreateUser(UserModelClass user)
-    {
-        using (var connection = new SqlConnection(connectionString))
+        private readonly ConnectionContext _connectionContext;
+        public UserRepository(ConnectionContext connectionContext)
         {
-            connection.Open();
-
-            var parameters = new
+            _connectionContext = connectionContext;
+        }
+        async Task<Boolean>  IUserRepository.AddAsync(UserModel user)
+        {
+            try
             {
-                UserId = user.UserId,
-                UserName = user.UserName,
-                Password = user.Password,
-                UserEmail = user.UserEmail,
-                UserType = user.UserType
-            };
+                using (var _connectionString = _connectionContext.CreateConnection())
+                {
+                    int newmethod = 0;
+                    var dynamicParameters = new DynamicParameters();
 
-            connection.Execute("sp_create_Users", parameters, commandType: CommandType.StoredProcedure);
+                    dynamicParameters.Add("@UserName", user.UserName);
+                    dynamicParameters.Add("@UserEmail", user.UserEmail);
+                    dynamicParameters.Add("@Password", user.Password);
+                  //  dynamicParameters.Add("@Status", 1, DbType.Int16, direction: ParameterDirection.Output);
+                    var status =await _connectionString.ExecuteScalarAsync<Boolean>("sp_create_Users", dynamicParameters, commandType: CommandType.StoredProcedure);
+                  //  var status = dynamicParameters.Get<Boolean>("@Status");
+                    return status;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }
-
