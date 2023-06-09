@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ClinicManagementSystem.Repository
 {
@@ -19,28 +20,37 @@ namespace ClinicManagementSystem.Repository
         {
             _connectionContext = connectionContext;
         }
-        async Task<Boolean>  IUserRepository.AddAsync(UserModel user)
+        async Task<string>  IUserRepository.AddAsync(UserModel user)
         {
             try
             {
                 using (var _connectionString = _connectionContext.CreateConnection())
                 {
-                    int newmethod = 0;
                     var dynamicParameters = new DynamicParameters();
 
-                    dynamicParameters.Add("@UserName", user.UserName);
-                    dynamicParameters.Add("@UserEmail", user.UserEmail);
-                    dynamicParameters.Add("@Password", user.Password);
-                  //  dynamicParameters.Add("@Status", 1, DbType.Int16, direction: ParameterDirection.Output);
-                    var status =await _connectionString.ExecuteScalarAsync<Boolean>("sp_create_Users", dynamicParameters, commandType: CommandType.StoredProcedure);
-                  //  var status = dynamicParameters.Get<Boolean>("@Status");
-                    return status;
+                    dynamicParameters.Add("@UserName", user.UserName, DbType.String);
+                    dynamicParameters.Add("@UserEmail", user.UserEmail, DbType.String);
+                    dynamicParameters.Add("@Password", user.Password, DbType.String);
+                    dynamicParameters.Add("@UserType", user.UserType, DbType.String);
+                    dynamicParameters.Add("@SignUpSuccess", 1, DbType.Boolean, direction: ParameterDirection.Output);
+                    int SignUpSucess = await _connectionString.ExecuteScalarAsync<int>("sp_create_Users", dynamicParameters, commandType: CommandType.StoredProcedure);
+                    //var SignUpSucess = dynamicParameters.Get<bool>("@SignUpSuccess");
+                    
+                    if (SignUpSucess == 0)
+                    {
+                        return "User Registered";
+                    }
+                    else
+                    {
+                        return "Already Registred";
+                    }
+                    
                 }
             }
-            catch (Exception ex)
-            {
-                throw;
+            catch(Exception ex) {
+                throw ex;
             }
+        
         }
     }
 }

@@ -13,12 +13,18 @@ namespace ClinicManagementSystem.Controllers
             _logger = logger;
         }
 
+        
         public IActionResult Index()
         {
             return View();
+           
         }
 
         public IActionResult SignUpUser() 
+        { 
+            return View();
+        }
+        public IActionResult Confirmation() 
         {
             return View();
         }

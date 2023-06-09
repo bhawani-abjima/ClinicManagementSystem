@@ -4,6 +4,6 @@ namespace ClinicManagementSystem.Contracts
 {
     public interface IUserRepository
     {
-        public  Task <Boolean> AddAsync(UserModel user);
+        public  Task <string> AddAsync(UserModel user);
     }
 }
