@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ConnectionContext>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

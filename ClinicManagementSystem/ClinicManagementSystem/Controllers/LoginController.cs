@@ -1,33 +1,19 @@
 ﻿using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System.Diagnostics;
+using System;
+using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Controllers
 {
-    public class HomeController : Controller
+    public class LoginController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ILoginRepository _loginRepository;
 
-        public HomeController(ILogger<HomeController> logger, ILoginRepository loginRepository)
+        public LoginController(ILoginRepository loginRepository)
         {
-            _logger = logger;
             _loginRepository = loginRepository;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult SignUpUser()
-        {
-            return View();
-        }
-        
-
 
         [HttpPost]
         public async Task<IActionResult> LoginUser(LoginModel loginCredentials)
@@ -47,31 +33,19 @@ namespace ClinicManagementSystem.Controllers
                         case "Admin":
                             return RedirectToAction("AdminPortal", "Admin");
                         default:
-                            return RedirectToAction("Index");
+                            return RedirectToAction("Index", "Home");
                     }
                 }
                 catch (Exception ex)
                 {
                     // Handle the exception and display an appropriate error message
-                    _logger.LogError(ex, "An error occurred during login.");
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

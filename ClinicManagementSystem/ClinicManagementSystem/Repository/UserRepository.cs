@@ -13,14 +13,14 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ClinicManagementSystem.Repository
 {
-    public class UserRepository: IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly ConnectionContext _connectionContext;
         public UserRepository(ConnectionContext connectionContext)
         {
             _connectionContext = connectionContext;
         }
-        async Task<string>  IUserRepository.AddAsync(UserModel user)
+        async Task<string> IUserRepository.AddAsync(UserModel user)
         {
             try
             {
@@ -33,24 +33,25 @@ namespace ClinicManagementSystem.Repository
                     dynamicParameters.Add("@Password", user.Password, DbType.String);
                     dynamicParameters.Add("@UserType", user.UserType, DbType.String);
                     dynamicParameters.Add("@SignUpSuccess", 1, DbType.Boolean, direction: ParameterDirection.Output);
-                    int SignUpSucess = await _connectionString.ExecuteScalarAsync<int>("sp_create_Users", dynamicParameters, commandType: CommandType.StoredProcedure);
-                    //var SignUpSucess = dynamicParameters.Get<bool>("@SignUpSuccess");
-                    
-                    if (SignUpSucess == 0)
+                    await _connectionString.ExecuteAsync("sp_create_Users", dynamicParameters, commandType: CommandType.StoredProcedure);
+                    var signUpSuccess = dynamicParameters.Get<bool>("@SignUpSuccess");
+
+                    if (signUpSuccess)
                     {
-                        return "User Registered";
+                        return "Registration Successful";
                     }
                     else
                     {
-                        return "Already Registred";
+                        return "Already Registered";
                     }
-                    
                 }
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
-        
         }
+
+       
     }
 }

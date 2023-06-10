@@ -2,9 +2,8 @@
 
 namespace ClinicManagementSystem.Contracts
 {
-    public interface IUserRepository
+    public interface ILoginRepository
     {
-        Task <string> AddAsync(UserModel user);
-      
+        Task<string> LoginAsync(LoginModel loginCredentials);
     }
 }

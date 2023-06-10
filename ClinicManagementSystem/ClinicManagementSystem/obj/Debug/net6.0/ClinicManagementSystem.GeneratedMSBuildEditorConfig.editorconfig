@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\BhawaniSingh\Documents\GitHub\ClinicManagementSystem\ClinicManagementSystem\ClinicManagementSystem
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/AdminPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBvcnRhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JQb3J0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/LoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50UG9ydGFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Privacy.cshtml]

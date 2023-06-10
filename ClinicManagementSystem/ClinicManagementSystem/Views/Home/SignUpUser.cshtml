@@ -45,30 +45,30 @@
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
                 @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
                 </div>*@
-                <div>@{
-                        var userTypes = new List<SelectListItem>
-                {
-                new SelectListItem { Text = "Patient", Value = "Patient" },
-                new SelectListItem { Text = "Doctor", Value = "Doctor" },
-                new SelectListItem { Text = "Admin", Value = "Admin" }
-                };
-                    }
-
-                    <label for="userType">Select User Type:</label>
-                    <select id="userType" name="userType">
-                        @foreach (var userType in userTypes)
-                        {
-                            <option value="@userType.Value">@userType.Text</option>
+                    <div>
+                        @{
+                            var userTypes = new List<SelectListItem>
+                    {
+                    new SelectListItem { Text = "Patient", Value = "Patient" },
+                    new SelectListItem { Text = "Doctor", Value = "Doctor" },
+                    new SelectListItem { Text = "Admin", Value = "Admin" }
+                    };
                         }
-                    </select>
-                </div>
-                <div class="form-group">
+
+                        <label for="userType">Select User Type:</label>
+                        <select id="userType" name="userType">
+                            @foreach (var userType in userTypes)
+                            {
+                                <option value="@userType.Value">@userType.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" />
-                </div>
+                    </div>
                 </div>
             </div>
 
         }
     </div>
 </div>
-
