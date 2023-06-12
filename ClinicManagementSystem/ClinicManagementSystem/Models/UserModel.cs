@@ -10,10 +10,5 @@
         public string? UserType { get; set; }
         //public DateTime AddedOn { get; internal set; }
     }
-    public enum UserType
-    {
-        Patient,
-        Doctor,
-        Admin
-    }
+  
 }

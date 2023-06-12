@@ -26,42 +26,24 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-        
-
-
-        [HttpPost]
-        public async Task<IActionResult> LoginUser(LoginModel loginCredentials)
+        public IActionResult LoginUser()
         {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var userType = await _loginRepository.LoginAsync(loginCredentials);
-
-                    switch (userType)
-                    {
-                        case "Patient":
-                            return RedirectToAction("PatientPortal", "Patient");
-                        case "Doctor":
-                            return RedirectToAction("DoctorPortal", "Doctor");
-                        case "Admin":
-                            return RedirectToAction("AdminPortal", "Admin");
-                        default:
-                            return RedirectToAction("Index");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Handle the exception and display an appropriate error message
-                    _logger.LogError(ex, "An error occurred during login.");
-                    return RedirectToAction("Index");
-                }
-            }
-            else
-            {
-                return RedirectToAction("Index");
-            }
+            return View();
         }
+        public IActionResult PatientPortal() 
+        {
+            return View();
+        }
+        public IActionResult DoctorPortal()
+        {
+            return View();
+        }
+        public IActionResult AdminPortal()
+        {
+            return View();
+        }
+
+
 
         public IActionResult Privacy()
         {

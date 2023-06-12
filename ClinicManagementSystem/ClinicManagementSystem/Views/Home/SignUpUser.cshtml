@@ -45,23 +45,15 @@
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
                 @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
                 </div>*@
-                    <div>
-                        @{
-                            var userTypes = new List<SelectListItem>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.UserType)
+                        @Html.DropDownListFor(m => m.UserType, new SelectList(new[]
                     {
                     new SelectListItem { Text = "Patient", Value = "Patient" },
                     new SelectListItem { Text = "Doctor", Value = "Doctor" },
                     new SelectListItem { Text = "Admin", Value = "Admin" }
-                    };
-                        }
-
-                        <label for="userType">Select User Type:</label>
-                        <select id="userType" name="userType">
-                            @foreach (var userType in userTypes)
-                            {
-                                <option value="@userType.Value">@userType.Text</option>
-                            }
-                        </select>
+                    }, "Value", "Text"), "Select User Type", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.UserType, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="form-group">
                         <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" />

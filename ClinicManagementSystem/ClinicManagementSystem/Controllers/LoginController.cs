@@ -1,5 +1,6 @@
 ﻿using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
+using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -16,36 +17,38 @@ namespace ClinicManagementSystem.Controllers
         }
 
         [HttpPost]
+        [HttpPost]
         public async Task<IActionResult> LoginUser(LoginModel loginCredentials)
         {
             if (ModelState.IsValid)
             {
-                try
-                {
-                    var userType = await _loginRepository.LoginAsync(loginCredentials);
+                var result = await _loginRepository.LoginAsync(loginCredentials);
 
-                    switch (userType)
-                    {
-                        case "Patient":
-                            return RedirectToAction("PatientPortal", "Patient");
-                        case "Doctor":
-                            return RedirectToAction("DoctorPortal", "Doctor");
-                        case "Admin":
-                            return RedirectToAction("AdminPortal", "Admin");
-                        default:
-                            return RedirectToAction("Index", "Home");
-                    }
-                }
-                catch (Exception ex)
+                if (result == "Login Sucessful ")
                 {
-                    // Handle the exception and display an appropriate error message
-                    return RedirectToAction("Index", "Home");
+                    string usertype = loginCredentials.L_UserType;
+                    if (usertype == "Patient")
+                    {
+
+                        return RedirectToAction("PatientPortal", "Home");
+                    }
+                    else if (usertype == "Doctor")
+                    {
+
+                        return RedirectToAction("DoctorPortal", "Home");
+                    }
+                    else if (usertype == "Admin")
+                    {
+
+                        return RedirectToAction("AdminPortal", "Home");
+                    }
+
                 }
+
+
             }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return View();
+
         }
     }
 }
