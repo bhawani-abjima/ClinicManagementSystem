@@ -16,7 +16,7 @@ namespace ClinicManagementSystem.Controllers
             _loginRepository = loginRepository;
         }
 
-        [HttpPost]
+       
         [HttpPost]
         public async Task<IActionResult> LoginUser(LoginModel loginCredentials)
         {

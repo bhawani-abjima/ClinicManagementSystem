@@ -17,7 +17,7 @@ namespace ClinicManagementSystem.Repository
             _connectionContext = connectionContext;
         }
 
-
+       
         public async Task<string> PatientAsync(PatientModel patientCredentials)
         {
             try
@@ -39,21 +39,22 @@ namespace ClinicManagementSystem.Repository
                     dynamicParameters.Add("@Address", patientCredentials.Address);
                     dynamicParameters.Add("@Height", patientCredentials.Height);
                     dynamicParameters.Add("@Weight", patientCredentials.Weight);
-                    dynamicParameters.Add("@DiseaseType", patientCredentials.DiseaseType);
+                    // dynamicParameters.Add("@DiseaseType", patientCredentials.DiseaseType);
                     dynamicParameters.Add("@DiseaseBrief", patientCredentials.DiseaseBrief);
-                    dynamicParameters.Add("@ApplicationDetails", patientCredentials.ApplicationDetails);
-                    dynamicParameters.Add("@RegistrationSuccess", 1, DbType.Boolean, direction: ParameterDirection.Output);
+                    // dynamicParameters.Add("@ApplicationDetails", patientCredentials.ApplicationDetails);
+                    dynamicParameters.Add("@RegistrationSuccess", 1, DbType.Int32, direction: ParameterDirection.Output);
 
                     await _connectionString.ExecuteAsync("sp_profile_patient", dynamicParameters, commandType: CommandType.StoredProcedure);
-                    var RegistrationSuccess = dynamicParameters.Get<bool>("@RegistrationSuccess");
+                    var RegistrationSuccess = dynamicParameters.Get<int>("@RegistrationSuccess");
 
-                    if (RegistrationSuccess)
+                    if (RegistrationSuccess == 1)
                     {
                         return "RegistrationSuccess";
+
                     }
                     else
                     {
-                        return "Invalid credentials. Please check details";
+                        return "Invalid credentials. Please register.";
                     }
                 }
             }

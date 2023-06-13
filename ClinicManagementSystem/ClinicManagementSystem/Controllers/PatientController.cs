@@ -2,6 +2,8 @@
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using System.Linq.Expressions;
 
 namespace ClinicManagementSystem.Controllers
 {
@@ -10,22 +12,34 @@ namespace ClinicManagementSystem.Controllers
         private readonly IPatientRepository _patientRepository;
         public PatientController(IPatientRepository patientRepository)
         {
-                _patientRepository = patientRepository;
-            
+            _patientRepository = patientRepository;
+
         }
 
+        [HttpPost]
+        public async Task<IActionResult> PatientRegistration(PatientModel patientCredentials)
 
-        public async Task<string> PatientPortal(PatientModel patientCredentials)
         {
+
             if (ModelState.IsValid)
             {
                 var newpatient = await _patientRepository.PatientAsync(patientCredentials);
-                return newpatient;
-
+                if (newpatient== "RegistrationSuccess")
+                {
+                    return RedirectToAction("PatientPortal");
+                }
+                else
+                {
+                    return RedirectToAction("AdminPortal", "Home");
+                }
             }
-            else { throw new Exception("Invalid model state."); }
-
-
+            else
+            {
+                return RedirectToAction("AdminPortal", "Home");
+            }
+                return View();
         }
+
+
     }
 }

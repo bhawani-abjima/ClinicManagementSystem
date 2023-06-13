@@ -1,5 +1,6 @@
 ﻿using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
+using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ namespace ClinicManagementSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ILoginRepository _loginRepository;
+        private object _patientRepository;
 
         public HomeController(ILogger<HomeController> logger, ILoginRepository loginRepository)
         {
@@ -30,10 +32,15 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-        public IActionResult PatientPortal() 
+        public IActionResult PatientRegistration() 
         {
             return View();
         }
+        public IActionResult PatientPortal()
+        {
+            return View();
+        }
+
         public IActionResult DoctorPortal()
         {
             return View();
