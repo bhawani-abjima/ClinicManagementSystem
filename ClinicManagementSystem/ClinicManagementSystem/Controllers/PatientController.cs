@@ -9,24 +9,29 @@ namespace ClinicManagementSystem.Controllers
 {
     public class PatientController : Controller
     {
+        
         private readonly IPatientRepository _patientRepository;
         public PatientController(IPatientRepository patientRepository)
         {
             _patientRepository = patientRepository;
 
         }
+     
+
 
         [HttpPost]
         public async Task<IActionResult> PatientRegistration(PatientModel patientCredentials)
 
-        {
+            {
 
             if (ModelState.IsValid)
             {
                 var newpatient = await _patientRepository.PatientAsync(patientCredentials);
-                if (newpatient== "RegistrationSuccess")
+                
+                if (newpatient == "RegistrationSuccess")
                 {
-                    return RedirectToAction("PatientPortal");
+                   
+                    return RedirectToAction("PatientLoginPortal");
                 }
                 else
                 {
@@ -35,9 +40,12 @@ namespace ClinicManagementSystem.Controllers
             }
             else
             {
-                return RedirectToAction("AdminPortal", "Home");
+                // return RedirectToAction("AdminPortal", "Home");
+                //return View("PatientRegistration");
+                 throw new Exception("Invalid model state.");
+
             }
-                return View();
+                
         }
 
 

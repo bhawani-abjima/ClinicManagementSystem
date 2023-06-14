@@ -47,7 +47,7 @@ namespace ClinicManagementSystem.Repository
                     await _connectionString.ExecuteAsync("sp_profile_patient", dynamicParameters, commandType: CommandType.StoredProcedure);
                     var RegistrationSuccess = dynamicParameters.Get<int>("@RegistrationSuccess");
 
-                    if (RegistrationSuccess == 1)
+                    if (RegistrationSuccess==1)
                     {
                         return "RegistrationSuccess";
 
@@ -63,5 +63,6 @@ namespace ClinicManagementSystem.Repository
                 throw ex;
             }
         }
+        
     }
 }

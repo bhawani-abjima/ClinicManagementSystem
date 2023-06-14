@@ -75,7 +75,7 @@ namespace ClinicManagementSystem.Models
         [Required(ErrorMessage = " DiseaseBrief is required.")]
         public string DiseaseBrief { get; set; }
 
-        public string RegistrationSuccess { get; set; }
+       // public string RegistrationSuccess { get; set; }
     }
 }
 

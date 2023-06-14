@@ -7,10 +7,10 @@
 
 <h1>Welcome to the Admin portal</h1>
 
-<div>
-    <button onclick="location.href='@Url.Action("PatientRegistration", "Home")'" style="font-size: 24px; padding: 20px;">Patient Registration</button>
-    <button onclick="location.href='@Url.Action("DoctorRegistration", "Admin")'" style="font-size: 24px; padding: 20px;">Doctor Registration</button>
-    <button onclick="location.href='@Url.Action("AppointmentDetails", "Admin")'" style="font-size: 24px; padding: 20px;">Appointment Details</button>
+<div class="d-grid gap-3 col-5 mx-auto">
+    <button class="btn btn-outline-info" onclick="location.href='@Url.Action("PatientRegistration", "Home")'" style="font-size: 30px; padding: 20px;"><b>Patient Registration</b></button>
+    <button class="btn btn-outline-secondary" onclick="location.href='@Url.Action("DoctorRegistration", "Admin")'" style="font-size: 30px; padding: 20px;"><b>Doctor Registration</b></button>
+    <button class="btn btn-outline-success" onclick="location.href='@Url.Action("AppointmentDetails", "Admin")'" style="font-size: 30px; padding: 20px;"><b>Appointment Details</b></button>
 </div>
 
 <!-- Rest of the HTML content -->
