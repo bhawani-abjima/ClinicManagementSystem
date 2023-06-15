@@ -30,7 +30,7 @@ namespace ClinicManagementSystem.Controllers
                     if (usertype == "Patient")
                     {
 
-                        return RedirectToAction("PatientLoginPortal", "Home");
+                        return RedirectToAction("PatientPortal", "Home");
                     }
                     else if (usertype == "Doctor")
                     {

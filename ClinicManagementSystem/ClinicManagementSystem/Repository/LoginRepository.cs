@@ -23,6 +23,7 @@ namespace ClinicManagementSystem.Repository
                     var dynamicParameters = new DynamicParameters();
                     dynamicParameters.Add("@L_UserName", loginCredentials.L_UserName);
                     dynamicParameters.Add("@L_Password", loginCredentials.L_Password);
+                    dynamicParameters.Add("@L_UserEmail", loginCredentials.L_UserEmail);
                     dynamicParameters.Add("@L_UserType", loginCredentials.L_UserType);
                     dynamicParameters.Add("@L_LoginSuccess", DbType.Int32, direction: ParameterDirection.Output);
 

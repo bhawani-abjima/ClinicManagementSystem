@@ -3,6 +3,7 @@ using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using Dapper;
 using System.Data;
+using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Repository
 {
@@ -15,40 +16,25 @@ namespace ClinicManagementSystem.Repository
             _connectionContext = connectionContext;
         }
 
-        public async Task<string> patientLoginAsync(PatientLoginModel patientloginCredentials)
+    
+        public async Task<PatientModel> PatientLoginAsync(string email)
         {
             try
             {
-                using (var _connectionString = _connectionContext.CreateConnection())
+                using (var connection = _connectionContext.CreateConnection())
                 {
                     var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@PatientPhoneNo", patientloginCredentials.PhoneNo);
-                    dynamicParameters.Add("@PatientEmail", patientloginCredentials.Email);
-                    dynamicParameters.Add("@PatientLoginSuccess", DbType.Int32, direction: ParameterDirection.Output);
+                    dynamicParameters.Add("@PatientEmail",email);
 
-                    await _connectionString.ExecuteAsync("sp_checkPatientLogin", dynamicParameters, commandType: CommandType.StoredProcedure);
+                    var patientData = await connection.QueryFirstOrDefaultAsync<PatientModel>("sp_checkPatientLogin", dynamicParameters, commandType: CommandType.StoredProcedure);
 
-                    var patientloginSuccess = dynamicParameters.Get<int>("@PatientLoginSuccess");
-
-                    if (patientloginSuccess == 1)
-                    {
-                        return "PatientLoginSuccess";
-
-                    }
-                    else
-                    {
-                        return "Invalid credentials. Please sign up.";
-                    }
+                    return patientData;
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 throw ex;
             }
         }
     }
 }
-
-
-      
-    

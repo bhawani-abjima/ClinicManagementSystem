@@ -28,11 +28,11 @@
                         @Html.TextBoxFor(m => m.L_UserName, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.L_UserName, "", new { @class = "text-danger" })
                     </div>
-                    @*<div class="form-group">
-                @Html.LabelFor(m => m.L_UserEmail)
-                @Html.TextBoxFor(m => m.L_UserEmail, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.L_UserEmail, "", new { @class = "text-danger" })
-                </div>*@
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.L_UserEmail)
+                        @Html.TextBoxFor(m => m.L_UserEmail, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.L_UserEmail, "", new { @class = "text-danger" })
+                    </div>
                     <div class="form-group">
                         @Html.LabelFor(m => m.L_Password,"Password")
                         @Html.PasswordFor(m => m.L_Password, new { @class = "form-control" })

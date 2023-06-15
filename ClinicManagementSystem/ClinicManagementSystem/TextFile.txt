@@ -1,1 +1,45 @@
-﻿
+﻿using ClinicManagementSystem.Connection;
+using ClinicManagementSystem.Contracts;
+using ClinicManagementSystem.Models;
+using Dapper;
+using System;
+using System.Data;
+using System.Threading.Tasks;
+
+namespace ClinicManagementSystem.Repository
+{
+    public class PatientLoginRepository : IPatientLoginRepository
+    {
+        private readonly ConnectionContext _connectionContext;
+
+        public PatientLoginRepository(ConnectionContext connectionContext)
+        {
+            _connectionContext = connectionContext;
+        }
+
+        public async Task<PatientModel> PatientLoginAsync(PatientLoginModel patientLoginCredentials)
+        {
+            try
+            {
+                using (var _connectionString = _connectionContext.CreateConnection())
+                {
+                    var dynamicParameters = new DynamicParameters();
+                    dynamicParameters.Add("@PatientPhoneNo", patientLoginCredentials.PhoneNo);
+                    dynamicParameters.Add("@PatientEmail", patientLoginCredentials.Email);
+
+                    var patientData = await _connectionString.QueryFirstOrDefaultAsync<PatientModel>(
+                        "sp_checkPatientLogin",
+                        dynamicParameters,
+                        commandType: CommandType.StoredProcedure
+                    );
+
+                    return patientData;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+}

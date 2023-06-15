@@ -2,37 +2,39 @@
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Controllers
 {
     public class PatientLoginController : Controller
     {
         private readonly IPatientLoginRepository _patientLoginRepository;
+
         public PatientLoginController(IPatientLoginRepository patientLoginRepository)
         {
             _patientLoginRepository = patientLoginRepository;
-            
         }
 
-        public async Task<string> PatientLoginPortal(PatientLoginModel newpatient)
+        
+        [HttpPost]
+        public async Task<IActionResult> PatientLoginPortal(PatientLoginModel newpatient)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                var portaldata = await _patientLoginRepository.patientLoginAsync(newpatient);
-                
-                if(portaldata == "PatientLoginSuccess") 
-                {
-                    return "Patient portal under maintence";
-                }
-                else
-                {
-                    return "loading....error....";
-                }
+                PatientModel portalData = await _patientLoginRepository.PatientLoginAsync(newpatient.Email);
+                return View("~/Views/Home/PatientPortal.cshtml", portalData);
+                //if (portalData != null)
+                //{
+                //    return RedirectToAction("PatientPortal", portalData);
+                //}
+                //else
+                //{
+                //    ModelState.AddModelError("", "Invalid email");
+                //}
             }
-            else
-            { throw new Exception("Invalid model state."); 
-            }
+            return RedirectToAction("PatientLoginPortal");
         }
 
+       
     }
 }
