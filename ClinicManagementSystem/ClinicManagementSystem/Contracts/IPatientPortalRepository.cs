@@ -3,7 +3,7 @@ using ClinicManagementSystem.Models;
 
 namespace ClinicManagementSystem.Contracts
 {
-    public interface IPatientLoginRepository
+    public interface IPatientPortalRepository
     {
         Task<PatientModel> PatientLoginAsync(string email);
     }
