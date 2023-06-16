@@ -9,8 +9,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ConnectionContext>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ILoginRepository, LoginRepository>();
-builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+builder.Services.AddScoped<IPatientRegistrationRepository, PatientRegistrationRepository>();
 builder.Services.AddScoped<IPatientPortalRepository,PatientPortalRepository>();
+builder.Services.AddScoped<IDoctorRegistrationRepository,DoctorRegistrationRepository>();
+builder.Services.AddScoped<IDoctorPortalRepository,DoctorPortalRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

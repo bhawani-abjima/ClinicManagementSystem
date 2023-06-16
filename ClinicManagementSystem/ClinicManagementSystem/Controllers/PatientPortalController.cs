@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Controllers
 {
-    public class PatientLoginController : Controller
+    public class PatientPortalController : Controller
     {
-        private readonly IPatientLoginRepository _patientLoginRepository;
+        private readonly IPatientPortalRepository _patientportalRepository;
 
-        public PatientLoginController(IPatientLoginRepository patientLoginRepository)
+        public PatientPortalController(IPatientPortalRepository patientportalRepository)
         {
-            _patientLoginRepository = patientLoginRepository;
+            _patientportalRepository = patientportalRepository;
         }
 
         
         [HttpPost]
-        public async Task<IActionResult> PatientLoginPortal(PatientLoginModel newpatient)
+        public async Task<IActionResult> PatientLoginPortal(PatientPortalModel newpatient)
         {
             if (ModelState.IsValid)
             {
-                PatientModel portalData = await _patientLoginRepository.PatientLoginAsync(newpatient.Email);
+                PatientModel portalData = await _patientportalRepository.PatientPortalAsync(newpatient.PatientEmail);
                 return View("~/Views/Home/PatientPortal.cshtml", portalData);
                 //if (portalData != null)
                 //{
@@ -32,7 +32,7 @@ namespace ClinicManagementSystem.Controllers
                 //    ModelState.AddModelError("", "Invalid email");
                 //}
             }
-            return RedirectToAction("PatientLoginPortal");
+            return RedirectToAction("PatientPortal");
         }
 
        

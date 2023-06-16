@@ -7,11 +7,11 @@ using System.Linq.Expressions;
 
 namespace ClinicManagementSystem.Controllers
 {
-    public class PatientController : Controller
+    public class PatientRegistrationController : Controller
     {
         
-        private readonly IPatientRepository _patientRepository;
-        public PatientController(IPatientRepository patientRepository)
+        private readonly IPatientRegistrationRepository _patientRepository;
+        public PatientRegistrationController(IPatientRegistrationRepository patientRepository)
         {
             _patientRepository = patientRepository;
 
@@ -31,7 +31,7 @@ namespace ClinicManagementSystem.Controllers
                 if (newpatient == "RegistrationSuccess")
                 {
                    
-                    return RedirectToAction("PatientLoginPortal");
+                    return RedirectToAction("PatientPortal");
                 }
                 else
                 {

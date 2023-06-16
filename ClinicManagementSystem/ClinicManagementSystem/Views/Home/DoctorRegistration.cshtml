@@ -1,0 +1,75 @@
+﻿@model ClinicManagementSystem.Models.DoctorModel
+@{
+    ViewData["Title"] = "DoctorRegistration";
+}
+
+<div class="container">
+    <div class="row justify-content-start">
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><b>Doctor Registration</b></div>
+                </div>
+                <div class="card-body">
+                    <form asp-action="DoctorRegistration" asp-controller="DoctorRegistration" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="RegistrationNo" class="control-label"></label>
+                            <input asp-for="RegistrationNo" class="form-control" />
+                            <span asp-validation-for="RegistrationNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DoctorFirstName" class="control-label"></label>
+                            <input asp-for="DoctorFirstName" class="form-control" />
+                            <span asp-validation-for="DoctorFirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="DoctorLastName" class="control-label"></label>
+                            <input asp-for="DoctorLastName" class="form-control" />
+                            <span asp-validation-for="DoctorLastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Specialities" class="control-label"></label>
+                            <input asp-for="Specialities" class="form-control" />
+                            <span asp-validation-for="Specialities" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Experience" class="control-label"></label>
+                            <input asp-for="Experience" class="form-control" />
+                            <span asp-validation-for="Experience" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Education" class="control-label"></label>
+                            <input asp-for="Education" class="form-control" />
+                            <span asp-validation-for="Education" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label asp-for="Fees" class="control-label"></label>
+                            <input asp-for="Fees" class="form-control" />
+                            <span asp-validation-for="Fees" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="Index">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

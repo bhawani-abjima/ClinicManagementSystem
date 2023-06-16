@@ -1,6 +1,6 @@
 ﻿namespace ClinicManagementSystem.Repository
 {
-    public class DoctorRepository
+    public class BookAppointmentRepository
     {
     }
 }

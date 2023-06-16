@@ -3,38 +3,39 @@ using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using Dapper;
 using System.Data;
-using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Repository
 {
-    public class PatientPortalRepository : IPatientPortalRepository
+    public class DoctorPortalRepository : IDoctorPortalRepository
     {
         private readonly ConnectionContext _connectionContext;
 
-        public PatientPortalRepository(ConnectionContext connectionContext)
+        public DoctorPortalRepository(ConnectionContext connectionContext)
         {
+            
             _connectionContext = connectionContext;
         }
-
-        public async Task<PatientModel> PatientPortalAsync(string PatientEmail)
+        public async Task<DoctorModel> DoctorPortalAsync(string RegistrationNo)
         {
+
             try
             {
                 using (var connection = _connectionContext.CreateConnection())
                 {
                     var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@PatientEmail", PatientEmail);
-                  //  dynamicParameters.Add("@PatientEmail", PatientPhoneNo);
+                    dynamicParameters.Add("@RegistrationNo", RegistrationNo);
+               
 
-                    PatientModel patientData = await connection.QueryFirstOrDefaultAsync<PatientModel>("sp_checkPatientLogin", dynamicParameters, commandType: CommandType.StoredProcedure);
+                    DoctorModel doctorData = await connection.QueryFirstOrDefaultAsync<DoctorModel>("sp_checkdoctorLogin", dynamicParameters, commandType: CommandType.StoredProcedure);
 
-                    return patientData;
+                    return doctorData;
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+
         }
     }
 }

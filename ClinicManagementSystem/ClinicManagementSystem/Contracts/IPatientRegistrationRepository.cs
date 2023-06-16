@@ -2,7 +2,7 @@
 
 namespace ClinicManagementSystem.Contracts
 {
-    public interface IPatientRepository
+    public interface IPatientRegistrationRepository
     {
         public Task<string> PatientAsync(PatientModel PatientCredentials);
         

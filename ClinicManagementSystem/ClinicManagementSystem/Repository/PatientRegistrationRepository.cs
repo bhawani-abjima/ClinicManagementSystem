@@ -2,17 +2,14 @@
 using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using Dapper;
-using ClinicManagementSystem.Connection;
 using System.Data;
-using System.Data.SqlClient;
-using System.Threading.Tasks;
 
 namespace ClinicManagementSystem.Repository
 {
-    public class PatientRepository : IPatientRepository
+    public class PatientRegistrationRepository : IPatientRegistrationRepository
     {
         private readonly ConnectionContext _connectionContext;
-        public PatientRepository(ConnectionContext connectionContext)
+        public PatientRegistrationRepository(ConnectionContext connectionContext)
         {
             _connectionContext = connectionContext;
         }

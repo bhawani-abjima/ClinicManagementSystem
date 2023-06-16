@@ -36,18 +36,27 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-        public IActionResult PatientPortal()
+        public IActionResult PatientLoginPortal()
         {
             return View();
         }
      
 
 
-        public IActionResult DoctorPortal()
+        public IActionResult DoctorLoginPortal()
         {
             return View();
         }
+        public IActionResult DoctorRegistration()
+        {
+            return View();
+        }
+
         public IActionResult AdminPortal()
+        {
+            return View();
+        }
+        public IActionResult BookAppointment()
         {
             return View();
         }

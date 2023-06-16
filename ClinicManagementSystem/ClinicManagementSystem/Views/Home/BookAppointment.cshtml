@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Book Appointment";
+}
+
+<style>
+    .container {
+        display: flex;
+        justify-content: left;
+        align-items: flex-start;
+        height: 100vh;
+    }
+
+    .card {
+        max-width: 400px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+
+    .btn-primary {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border-radius: 3px;
+        border: none;
+        background-color: #ff0000; /* Change the color to red (#ff0000) */
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .btn-primary:hover {
+            background-color: #cc0000; /* Darker shade of red (#cc0000) */
+        }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="card-title"><b>Book Appointment</b></div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="datetimepicker">Choose Date and Time:</label>
+                <input type="datetime-local" id="datetimepicker" class="form-control" />
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" onclick="bookAppointment()">Book Appointment</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function bookAppointment() {
+        var selectedDateTime = document.getElementById("datetimepicker").value;
+
+        // Perform necessary actions with selected date and time
+
+        // Example: Show an alert with the selected date and time
+        alert("Appointment booked for " + selectedDateTime);
+    }
+</script>

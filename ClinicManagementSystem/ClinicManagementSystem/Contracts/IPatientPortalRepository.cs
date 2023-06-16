@@ -1,10 +1,10 @@
-﻿using System.Threading.Tasks;
-using ClinicManagementSystem.Models;
+﻿using ClinicManagementSystem.Models;
 
 namespace ClinicManagementSystem.Contracts
 {
     public interface IPatientPortalRepository
     {
-        Task<PatientModel> PatientLoginAsync(string email);
+        Task<PatientModel> PatientPortalAsync(string PatientEmail);
+       // Task<PatientModel> PatientPortalAsync(PatientPortalModel newpatient);
     }
 }

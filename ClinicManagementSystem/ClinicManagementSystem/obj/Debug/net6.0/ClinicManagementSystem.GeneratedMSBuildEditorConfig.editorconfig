@@ -20,8 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBvcnRhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/BookAppointment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCb29rQXBwb2ludG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorLoginPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JMb2dpblBvcnRhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorPortal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JQb3J0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JSZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Index.cshtml]
@@ -30,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/LoginUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientLoginPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50TG9naW5Qb3J0YWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientPortal.cshtml]

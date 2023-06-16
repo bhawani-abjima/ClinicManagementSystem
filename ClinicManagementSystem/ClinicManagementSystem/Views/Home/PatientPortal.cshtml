@@ -14,40 +14,49 @@
     }
 </style>
 
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        <div class="card">
-            <div class="card-header">
-                <div class="card-title"><b>Patient Portal</b></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-1">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><b>Patient Portal</b></div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><b>Patient First Name:</b> <span class="patient-name"><b>@Model.PatientFirstName</b></span></p>
+                            <p><b>Patient Last Name:</b> <span class="patient-name"><b>@Model.PatientLastName</b></span></p>
+                            <p><b>Age:</b> <span class="patient-detail">@Model.Age</span></p>
+                            <p><b>Gender:</b> <span class="patient-detail">@Model.Gender</span></p>
+                            <p><b>Phone No:</b> <span class="patient-detail">@Model.PhoneNo</span></p>
+                            <p><b>Email:</b> <span class="patient-detail">@Model.Email</span></p>
+                            <p><b>Martial Status:</b> <span class="patient-detail">@Model.MartialStatus</span></p>
+                            <p><b>Date of Birth:</b> <span class="patient-detail">@Model.DateOfBirth.ToShortDateString()</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><b>City:</b> <span class="patient-detail">@Model.City</span></p>
+                            <p><b>State:</b> <span class="patient-detail">@Model.State</span></p>
+                            <p><b>Address:</b> <span class="patient-detail">@Model.Address</span></p>
+                            <p><b>Height:</b> <span class="patient-detail">@Model.Height</span></p>
+                            <p><b>Weight:</b> <span class="patient-detail">@Model.Weight</span></p>
+                            <p><b>Disease Brief:</b> <span class="patient-detail">@Model.DiseaseBrief</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
-                      
-                        <p><b>Patient First Name:</b> <span class="patient-name"><b>@Model.PatientFirstName</b></span></p>
-                        <p><b>Patient Last Name:</b> <span class="patient-name"><b>@Model.PatientLastName</b></span></p>
-                        <p><b>Age:</b> <span class="patient-detail">@Model.Age</span></p>
-                        <p><b>Gender:</b> <span class="patient-detail">@Model.Gender</span></p>
-                        <p><b>Phone No:</b> <span class="patient-detail">@Model.PhoneNo</span></p>
-                        <p><b>Email:</b> <span class="patient-detail">@Model.Email</span></p>
-                        <p><b>Martial Status:</b> <span class="patient-detail">@Model.MartialStatus</span></p>
-                        <p><b>Date of Birth:</b> <span class="patient-detail">@Model.DateOfBirth.ToShortDateString()</span></p>
-                    </div>
-                    <div class="col-md-6">
-                      
-                        <p><b>City:</b> <span class="patient-detail">@Model.City</span></p>
-                        <p><b>State:</b> <span class="patient-detail">@Model.State</span></p>
-                        <p><b>Address:</b> <span class="patient-detail">@Model.Address</span></p>
-                        <p><b>Height:</b> <span class="patient-detail">@Model.Height</span></p>
-                        <p><b>Weight:</b> <span class="patient-detail">@Model.Weight</span></p>
-                        <p><b>Disease Brief:</b> <span class="patient-detail">@Model.DiseaseBrief</span></p>
-                    </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><b>Appointment</b></div>
+                </div>
+                <div class="card-body">
+                    <!-- Content for the appointment card -->
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+   
 </div>

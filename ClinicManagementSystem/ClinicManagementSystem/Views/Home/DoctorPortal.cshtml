@@ -1,10 +1,68 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model ClinicManagementSystem.Models.DoctorModel
 @{
-    ViewBag.Title = "Welcome to Doctor Portal";
+    ViewData["Title"] = "Doctor Details";
 }
 
-<h1>Welcome to the Doctor portal</h1>
+<style>
+    .form-group label {
+        font-weight: bold;
+        color:black;    
+    }
 
-<!-- Rest of the HTML content -->
+    .form-group{
+        color: blue;
+    }
+    .form-head{
+        color: red;
+        font-weight:bold;
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title"><b>Doctor Details</b></div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label><b>Registration Number:</b></label>
+                        <span class="form-head">@Model.RegistrationNo</span>
+                    </div>
+                    <div class="form-group">
+                        <label>First Name:</label>
+                        <span>@Model.DoctorFirstName</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name:</label>
+                        <span>@Model.DoctorLastName</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <span>@Model.Email</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Specialities:</label>
+                        <span>@Model.Specialities</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Experience:</label>
+                        <span>@Model.Experience</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Education:</label>
+                        <span>@Model.Education</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Fees:</label>
+                        <span>@Model.Fees</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a asp-action="DoctorRegistration">Back to Registration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
