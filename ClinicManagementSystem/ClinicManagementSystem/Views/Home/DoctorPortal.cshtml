@@ -6,24 +6,55 @@
 <style>
     .form-group label {
         font-weight: bold;
-        color:black;    
+        color: black;
     }
 
-    .form-group{
+    .form-group {
         color: blue;
     }
-    .form-head{
+
+    .form-head {
         color: red;
-        font-weight:bold;
+        font-weight: bold;
+    }
+
+    .navbar {
+        margin-bottom: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 70px; /* Adjust this value to match the height of your navbar */
+        left: 0;
+        width: 30%;
+        height: 100%;
+        background-color: #f8f9fa;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+        margin-left: 20%;
+        padding: 15px;
+    }
+
+    .doctor-name {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
 </style>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navbar content -->
+</nav>
+
 <div class="container">
-    <div class="row justify-content-start">
-        <div class="col-md-6">
+    <div class="row">
+        <div class="sidebar">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title"><b>Doctor Details</b></div>
+                    <div class="card-title"><span class="doctor-name">@Model.DoctorFirstName @Model.DoctorLastName</span></div>
                 </div>
                 <div class="card-body">
                     <div class="form-group">
@@ -60,9 +91,12 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a asp-action="DoctorRegistration">Back to Registration</a>
+                    <a asp-action="EditProfile">Edit Profile</a>
                 </div>
             </div>
+        </div>
+        <div class="content">
+            <!-- Your main content here -->
         </div>
     </div>
 </div>

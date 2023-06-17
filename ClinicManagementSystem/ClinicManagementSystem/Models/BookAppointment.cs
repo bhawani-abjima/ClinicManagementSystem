@@ -3,9 +3,9 @@
 namespace ClinicManagementSystem.Models
 {
     public class BookAppointment
-    {            
-        public List<DoctorModel> Doctordetails { get; set; }
-        public DateTime? DateCreated { get; set; }
+    {
+        // public List<DoctorModel> Doctordetails { get; set; }
+        public DateTime SelectedDateTime { get; set; }
 
     }
 }

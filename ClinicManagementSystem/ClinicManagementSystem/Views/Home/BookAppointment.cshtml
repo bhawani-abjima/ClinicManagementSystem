@@ -1,87 +1,115 @@
-﻿@{
-    ViewData["Title"] = "Book Appointment";
+﻿@*
+        For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewBag.Title = "Appointment Registration";
+
 }
 
-<style>
-    .container {
-        display: flex;
-        justify-content: left;
-        align-items: flex-start;
-        height: 100vh;
-    }
-
-    .card {
-        max-width: 400px;
-        width: 100%;
-        background-color: #ffffff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-title {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Registration</title>
+    <style>
+        .card {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
 
-    .form-control {
-        width: 100%;
-        padding: 8px;
-        font-size: 14px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-    }
-
-    .btn-primary {
-        display: block;
-        width: 100%;
-        padding: 8px;
-        font-size: 14px;
-        border-radius: 3px;
-        border: none;
-        background-color: #ff0000; /* Change the color to red (#ff0000) */
-        color: #fff;
-        cursor: pointer;
-    }
-
-        .btn-primary:hover {
-            background-color: #cc0000; /* Darker shade of red (#cc0000) */
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-</style>
 
-<div class="container">
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="email"],
+            .form-group input[type="date"],
+            .form-group input[type="time"] {
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+        .submit-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function submitForm() {
+            var registrationNo = document.getElementById("registrationNo").value;
+            var selectedDate = document.getElementById("selectedDate").value;
+            var selectedTime = document.getElementById("selectedTime").value;
+            var patientName = document.getElementById("patientName").value;
+            var patientEmail = document.getElementById("patientEmail").value;
+
+            // Perform validation if needed
+            // ...
+
+            alert("Registration No: " + registrationNo +
+                "\nSelected Date: " + selectedDate +
+                "\nSelected Time: " + selectedTime +
+                "\nPatient Name: " + patientName +
+                "\nPatient Email: " + patientEmail);
+
+            // You can submit the form to a server using AJAX or other methods here
+            // ...
+        }
+    </script>
+</head>
+<body>
     <div class="card">
-        <div class="card-title"><b>Book Appointment</b></div>
-        <div class="card-body">
+        <h1 class="card-title">Appointment Registration</h1>
+        <form>
             <div class="form-group">
-                <label for="datetimepicker">Choose Date and Time:</label>
-                <input type="datetime-local" id="datetimepicker" class="form-control" />
+                <label for="registrationNo">Registration No:</label>
+                <input type="text" id="registrationNo" required>
             </div>
-        </div>
-        <div class="card-footer">
-            <button type="button" class="btn btn-primary" onclick="bookAppointment()">Book Appointment</button>
-        </div>
+
+            <div class="form-group">
+                <label for="selectedDate">Choose Date:</label>
+                <input type="date" id="selectedDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="selectedTime">Choose Time:</label>
+                <input type="time" id="selectedTime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="patientEmail">Patient Email:</label>
+                <input type="email" id="patientEmail" required>
+            </div>
+
+            <input type="button" value="Submit" onclick="submitForm()" class="submit-button">
+        </form>
     </div>
-</div>
-
-<script>
-    function bookAppointment() {
-        var selectedDateTime = document.getElementById("datetimepicker").value;
-
-        // Perform necessary actions with selected date and time
-
-        // Example: Show an alert with the selected date and time
-        alert("Appointment booked for " + selectedDateTime);
-    }
-</script>
+</body>
+</html>

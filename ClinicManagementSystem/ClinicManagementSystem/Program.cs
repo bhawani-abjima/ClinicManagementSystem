@@ -13,6 +13,7 @@ builder.Services.AddScoped<IPatientRegistrationRepository, PatientRegistrationRe
 builder.Services.AddScoped<IPatientPortalRepository,PatientPortalRepository>();
 builder.Services.AddScoped<IDoctorRegistrationRepository,DoctorRegistrationRepository>();
 builder.Services.AddScoped<IDoctorPortalRepository,DoctorPortalRepository>();
+builder.Services.AddScoped<IBookAppointmentRepository,BookAppointmentRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,140 @@
+﻿@model List<ClinicManagementSystem.Models.DoctorModel>
+
+@{
+    ViewData["Title"] = "Available Doctor Details";
+}
+
+<style>
+    .card {
+        background-color: #f8f9fa;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card-body {
+        margin-top: 10px;
+    }
+
+    .card-title {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+
+    .book-appointment-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    .form-head {
+        font-size: 16px;
+        color: #333333;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #dddddd;
+        margin: 10px 0;
+    }
+
+    .card-footer {
+        background-color: #ffffff;
+        border-top: none;
+        padding: 10px 20px;
+        text-align: right;
+    }
+
+    a {
+        color: deepskyblue;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    .book-appointment-btn {
+        display: inline-block;
+        padding: 5px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        background-color: deepskyblue;
+        color: white;
+        border-radius: 5px;
+    }
+
+        .book-appointment-btn:hover {
+            background-color: #00bfff;
+        }
+</style>
+
+<div class="container">
+    <h1 class="text-black mb-4">Available Doctor Details</h1>
+    <div class="row">
+        @if (Model != null && Model.Count > 0)
+        {
+            @foreach (var doctor in Model)
+            {
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">@doctor.DoctorFirstName @doctor.DoctorLastName</h3>
+                            <div class="form-group">
+                                <label><b>Registration Number:</b></label>
+                                <span class="form-head">@doctor.RegistrationNo</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <span>@doctor.Email</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Specialties:</label>
+                                <span>@doctor.Specialities</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Experience:</label>
+                                <span>@doctor.Experience</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Education:</label>
+                                <span>@doctor.Education</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Fees:</label>
+                                <span>@doctor.Fees</span>
+                            </div>
+                            <hr />
+                            <a href="@Url.Action("BookAppointment", "Home")" class="book-appointment-btn">Book Appointment</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        No available doctors found.
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

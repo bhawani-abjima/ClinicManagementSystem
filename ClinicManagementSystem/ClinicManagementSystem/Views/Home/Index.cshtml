@@ -1,9 +1,71 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Paste the CSS code here */
+        .home-center-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
 
-<div class="text-center">
-    <h1 class="display-4" style="color: deepskyblue;"><b>Clinic Management System</b></h1>
-    
-    <p>&copy; 2023 <a href="https://www.apollohospitals.com/">Explore our Centres of Clinical Excellence</a>.</p>
-</div>
+        .card {
+            width: 150px; /* Adjust the width as desired */
+            height: 150px; /* Adjust the height as desired */
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+    <!-- Include FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous" />
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="display-4" style="color: deepskyblue;"><b>Clinic Management System</b></h1>
+        <p>&copy; 2023 <a href="https://www.apollohospitals.com/">Explore our Centres of Clinical Excellence</a>.</p>
+    </div>
+
+    <div class="home-center-icons">
+        <div class="card">
+            <div class="icon"><i class="fas fa-book"></i></div>
+            <div class="title">Book Health Check-up</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-comments"></i></div>
+            <div class="title">Consult Online</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-medkit"></i></div>
+            <div class="title">Buy Medicine</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-hospital"></i></div>
+            <div class="title">Find Hospital</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-file-medical"></i></div>
+            <div class="title">View Health Record</div>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="title">Insurance</div>
+        </div>
+    </div>
+
+    <!-- more body content here -->
+</body>
+</html>

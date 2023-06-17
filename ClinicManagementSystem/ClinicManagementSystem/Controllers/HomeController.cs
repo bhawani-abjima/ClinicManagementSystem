@@ -56,13 +56,13 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
+       
         public IActionResult BookAppointment()
         {
             return View();
         }
 
-
-
+        
         public IActionResult Privacy()
         {
             return View();
