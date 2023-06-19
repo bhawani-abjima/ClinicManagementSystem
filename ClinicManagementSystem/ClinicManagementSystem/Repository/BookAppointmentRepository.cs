@@ -9,30 +9,44 @@ namespace ClinicManagementSystem.Repository
     public class BookAppointmentRepository : IBookAppointmentRepository
     {
         private readonly ConnectionContext _connectionContext;
-
-
         public BookAppointmentRepository(ConnectionContext connectionContext)
         {
             _connectionContext = connectionContext;
-
+            
         }
-
-        public async Task<List<DoctorModel>> BookAppointmentAsync()
+        public async  Task<string> AppointmentAsync(BookAppointment appointmentCredentials)
         {
             try
             {
-                using (var connection = _connectionContext.CreateConnection())
+                using (var _connectionString = _connectionContext.CreateConnection())
                 {
-                    var appointmentData = await connection.QueryAsync<DoctorModel>("sp_BookAppointment", commandType: CommandType.StoredProcedure);
-                    return appointmentData.ToList();
+                    var dynamicParameters = new DynamicParameters();
+                    dynamicParameters.Add("@DoctorName", appointmentCredentials.Doctor_Name);
+                    dynamicParameters.Add("@AppointmentDate", appointmentCredentials.AppointmentDate);
+                    dynamicParameters.Add("@AppointmentTime", appointmentCredentials.AppointmentTime);
+                    dynamicParameters.Add("@PatientEmail", appointmentCredentials.PatientEmail);
+                   // dynamicParameters.Add("@AppointmentStatus", appointmentCredentials.AppointmentStatus);
+                    dynamicParameters.Add("@Success", DbType.Int32, direction: ParameterDirection.Output);
+
+                    await _connectionString.ExecuteAsync("sp_BookAppointment", dynamicParameters, commandType: CommandType.StoredProcedure);
+
+                    var Success = dynamicParameters.Get<int>("@Success");
+
+                    if (Success == 1)
+                    {
+                        return "Appointment Booked Sucessful";
+
+                    }
+                    else
+                    {
+                        return "Invalid credentials. Please sign up.";
+                    }
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 throw ex;
             }
         }
-
-
     }
 }

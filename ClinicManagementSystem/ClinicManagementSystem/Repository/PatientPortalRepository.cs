@@ -16,6 +16,30 @@ namespace ClinicManagementSystem.Repository
             _connectionContext = connectionContext;
         }
 
+   
+
+        public async Task<BookAppointment> PatientAppointmentPortalAsync(string PatientEmail)
+        {
+            try
+            {
+                using (var connection = _connectionContext.CreateConnection())
+                {
+                    var dynamicParameters = new DynamicParameters();
+                    dynamicParameters.Add("@PatientEmail",PatientEmail);
+                    //  dynamicParameters.Add("@PatientEmail", PatientPhoneNo);
+
+                    BookAppointment appointments = await connection.QueryFirstOrDefaultAsync<BookAppointment>("DisplayAppointment", dynamicParameters, commandType: CommandType.StoredProcedure);
+
+                    return appointments;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public async Task<PatientModel> PatientPortalAsync(string PatientEmail)
         {
             try

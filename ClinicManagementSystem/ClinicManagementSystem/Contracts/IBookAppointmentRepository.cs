@@ -4,7 +4,6 @@ namespace ClinicManagementSystem.Contracts
 {
     public interface IBookAppointmentRepository
     {
-        Task<List<DoctorModel>> BookAppointmentAsync();
-
+        Task<string> AppointmentAsync(BookAppointment appointmentCredentials);
     }
 }

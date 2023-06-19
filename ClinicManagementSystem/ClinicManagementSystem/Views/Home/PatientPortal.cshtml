@@ -1,4 +1,5 @@
-﻿@model ClinicManagementSystem.Models.PatientModel
+﻿@model ClinicManagementSystem.Models.PatientPortalModel
+
 
 @{
     ViewData["Title"] = "Patient Portal";
@@ -8,9 +9,9 @@
     .patient-detail {
         color: blue;
     }
-    .patient-name{
-        color:red;
-       
+
+    .patient-name {
+        color: red;
     }
 </style>
 
@@ -24,22 +25,22 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <p><b>Patient First Name:</b> <span class="patient-name"><b>@Model.PatientFirstName</b></span></p>
-                            <p><b>Patient Last Name:</b> <span class="patient-name"><b>@Model.PatientLastName</b></span></p>
-                            <p><b>Age:</b> <span class="patient-detail">@Model.Age</span></p>
-                            <p><b>Gender:</b> <span class="patient-detail">@Model.Gender</span></p>
-                            <p><b>Phone No:</b> <span class="patient-detail">@Model.PhoneNo</span></p>
-                            <p><b>Email:</b> <span class="patient-detail">@Model.Email</span></p>
-                            <p><b>Martial Status:</b> <span class="patient-detail">@Model.MartialStatus</span></p>
-                            <p><b>Date of Birth:</b> <span class="patient-detail">@Model.DateOfBirth.ToShortDateString()</span></p>
+                            <p><b>Patient First Name:</b> <span class="patient-name"><b>@Model.Patient.PatientFirstName</b></span></p>
+                            <p><b>Patient Last Name:</b> <span class="patient-name"><b>@Model.Patient.PatientLastName</b></span></p>
+                            <p><b>Age:</b> <span class="patient-detail">@Model.Patient.Age</span></p>
+                            <p><b>Gender:</b> <span class="patient-detail">@Model.Patient.Gender</span></p>
+                            <p><b>Phone No:</b> <span class="patient-detail">@Model.Patient.PhoneNo</span></p>
+                            <p><b>Email:</b> <span class="patient-detail">@Model.Patient.Email</span></p>
+                            <p><b>Martial Status:</b> <span class="patient-detail">@Model.Patient.MartialStatus</span></p>
+                            <p><b>Date of Birth:</b> <span class="patient-detail">@Model.Patient.DateOfBirth.ToShortDateString()</span></p>
                         </div>
                         <div class="col-md-6">
-                            <p><b>City:</b> <span class="patient-detail">@Model.City</span></p>
-                            <p><b>State:</b> <span class="patient-detail">@Model.State</span></p>
-                            <p><b>Address:</b> <span class="patient-detail">@Model.Address</span></p>
-                            <p><b>Height:</b> <span class="patient-detail">@Model.Height</span></p>
-                            <p><b>Weight:</b> <span class="patient-detail">@Model.Weight</span></p>
-                            <p><b>Disease Brief:</b> <span class="patient-detail">@Model.DiseaseBrief</span></p>
+                            <p><b>City:</b> <span class="patient-detail">@Model.Patient.City</span></p>
+                            <p><b>State:</b> <span class="patient-detail">@Model.Patient.State</span></p>
+                            <p><b>Address:</b> <span class="patient-detail">@Model.Patient.Address</span></p>
+                            <p><b>Height:</b> <span class="patient-detail">@Model.Patient.Height</span></p>
+                            <p><b>Weight:</b> <span class="patient-detail">@Model.Patient.Weight</span></p>
+                            <p><b>Disease Brief:</b> <span class="patient-detail">@Model.Patient.DiseaseBrief</span></p>
                         </div>
                     </div>
                 </div>
@@ -51,12 +52,29 @@
                     <div class="card-title"><b>Appointment</b></div>
                 </div>
                 <div class="card-body">
-                    <!-- Content for the appointment card -->
+                    <div class="col-md-6">
+                        <div>
+                            <h3>Doctor Name:</h3>
+                            <p>@Model.Appointment.Doctor_Name</p>
+                        </div>
+
+                        <div>
+                            <h3>Appointment Date:</h3>
+                            <p>@Model.Appointment.AppointmentDate</p>
+                        </div>
+
+                        <div>
+                            <h3>Appointment Time:</h3>
+                            <p>@Model.Appointment.AppointmentTime</p>
+                        </div>
+
+                        <div>
+                            <h3>Patient Email:</h3>
+                            <p>@Model.Appointment.PatientEmail</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-   
 </div>

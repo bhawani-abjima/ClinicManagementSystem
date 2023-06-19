@@ -1,45 +1,23 @@
-﻿using ClinicManagementSystem.Connection;
-using ClinicManagementSystem.Contracts;
-using ClinicManagementSystem.Models;
-using Dapper;
-using System;
-using System.Data;
-using System.Threading.Tasks;
+﻿@model BookAppointment
 
-namespace ClinicManagementSystem.Repository
-{
-    public class PatientLoginRepository : IPatientLoginRepository
-    {
-        private readonly ConnectionContext _connectionContext;
+<h1>Book Appointment Details</h1>
 
-        public PatientLoginRepository(ConnectionContext connectionContext)
-        {
-            _connectionContext = connectionContext;
-        }
+<div>
+    <h3>Doctor Name:</h3>
+    <p>@Model.Doctor_Name</p>
+</div>
 
-        public async Task<PatientModel> PatientLoginAsync(PatientLoginModel patientLoginCredentials)
-        {
-            try
-            {
-                using (var _connectionString = _connectionContext.CreateConnection())
-                {
-                    var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@PatientPhoneNo", patientLoginCredentials.PhoneNo);
-                    dynamicParameters.Add("@PatientEmail", patientLoginCredentials.Email);
+<div>
+    <h3>Appointment Date:</h3>
+    <p>@Model.AppointmentDate</p>
+</div>
 
-                    var patientData = await _connectionString.QueryFirstOrDefaultAsync<PatientModel>(
-                        "sp_checkPatientLogin",
-                        dynamicParameters,
-                        commandType: CommandType.StoredProcedure
-                    );
+<div>
+    <h3>Appointment Time:</h3>
+    <p>@Model.AppointmentTime</p>
+</div>
 
-                    return patientData;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-    }
-}
+<div>
+    <h3>Patient Email:</h3>
+    <p>@Model.PatientEmail</p>
+</div>

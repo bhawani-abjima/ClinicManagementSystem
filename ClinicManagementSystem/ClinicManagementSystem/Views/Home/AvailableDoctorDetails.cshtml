@@ -1,140 +1,249 @@
-﻿@model List<ClinicManagementSystem.Models.DoctorModel>
-
-@{
-    ViewData["Title"] = "Available Doctor Details";
-}
-
-<style>
-    .card {
-        background-color: #f8f9fa;
-        border: none;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-        padding: 15px;
-        text-align: center;
-    }
-
-    .card-body {
-        margin-top: 10px;
-    }
-
-    .card-title {
-        color: black;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-    .form-group {
-        margin-bottom: 5px;
-    }
-
-    .book-appointment-btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        text-decoration: none;
-    }
-
-    label {
-        font-weight: bold;
-    }
-
-    .form-head {
-        font-size: 16px;
-        color: #333333;
-    }
-
-    hr {
-        border: none;
-        border-top: 1px solid #dddddd;
-        margin: 10px 0;
-    }
-
-    .card-footer {
-        background-color: #ffffff;
-        border-top: none;
-        padding: 10px 20px;
-        text-align: right;
-    }
-
-    a {
-        color: deepskyblue;
-        text-decoration: none;
-    }
-
-        a:hover {
-            text-decoration: underline;
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Doctor Details</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
         }
 
-    .book-appointment-btn {
-        display: inline-block;
-        padding: 5px 10px;
-        font-size: 14px;
-        font-weight: bold;
-        text-decoration: none;
-        background-color: deepskyblue;
-        color: white;
-        border-radius: 5px;
-    }
-
-        .book-appointment-btn:hover {
-            background-color: #00bfff;
+        .box-1 {
+            flex: 1;
+            margin-right: 20px;
         }
-</style>
 
-<div class="container">
-    <h1 class="text-black mb-4">Available Doctor Details</h1>
-    <div class="row">
-        @if (Model != null && Model.Count > 0)
-        {
-            @foreach (var doctor in Model)
-            {
-                <div class="col-md-6 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">@doctor.DoctorFirstName @doctor.DoctorLastName</h3>
-                            <div class="form-group">
-                                <label><b>Registration Number:</b></label>
-                                <span class="form-head">@doctor.RegistrationNo</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Email:</label>
-                                <span>@doctor.Email</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Specialties:</label>
-                                <span>@doctor.Specialities</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Experience:</label>
-                                <span>@doctor.Experience</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Education:</label>
-                                <span>@doctor.Education</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Fees:</label>
-                                <span>@doctor.Fees</span>
-                            </div>
-                            <hr />
-                            <a href="@Url.Action("BookAppointment", "Home")" class="book-appointment-btn">Book Appointment</a>
-                        </div>
-                    </div>
-                </div>
+        .box-2 {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+
+        .card {
+            background-color: white;
+            border: none;
+            border-radius: 1px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            padding: 15px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .card-body {
+            margin-top: 10px;
+            height: calc(100% - 50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+
+
+        .form-group {
+            margin-bottom: 5px;
+        }
+
+        .book-appointment-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-head {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dddddd;
+            margin: 10px 0;
+        }
+
+        .card-footer {
+            background-color: #ffffff;
+            border-top: none;
+            padding: 10px 20px;
+            text-align: right;
+        }
+
+        a {
+            color: deepskyblue;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
             }
+
+        .book-appointment-btn {
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: deepskyblue;
+            color: white;
+            border-radius: 5px;
         }
-        else
-        {
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-body">
-                        No available doctors found.
+
+            .book-appointment-btn:hover {
+                background-color: #00bfff;
+            }
+
+        .card-1 {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .card-title-1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .form-group-1 {
+            margin-bottom: 20px;
+        }
+
+            .form-group-1 label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .form-group-1 input[type="text"],
+            .form-group-1 input[type="email"],
+            .form-group-1 input[type="date"],
+            .form-group-1 input[type="time"] {
+                width: 100%;
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+            }
+
+        .submit-button-1 {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @foreach (var doctor in Model)
+                        {
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h3 class="card-title">@doctor.DoctorFirstName @doctor.DoctorLastName</h3>
+                                        <div class="form-group">
+                                            <label><b>Registration Number:</b></label>
+                                            <span class="form-head">@doctor.RegistrationNo</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email:</label>
+                                            <span>@doctor.Email</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Specialties:</label>
+                                            <span>@doctor.Specialities</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Experience:</label>
+                                            <span>@doctor.Experience</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Education:</label>
+                                            <span>@doctor.Education</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Fees:</label>
+                                            <span>@doctor.Fees</span>
+                                        </div>
+                                        <hr />
+                                        @* <a href="@Url.Action("BookAppointment", "Home")" class="book-appointment-btn">Book Appointment</a>*@
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    No available doctors found.
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box-2">
+                    <div class="card-1">
+                        <h1 class="card-title-1">Appointment Registration</h1>
+                        <form asp-controller="BookAppointment" asp-action="BookAppointment" method="post">
+                            <div class="form-group-1">
+                                <label for="Doctor_Name">Doctor Name:</label>
+                                <input type="text" id="Doctor_Name" name="Doctor_Name" required>
+                                @*<select id="doctorName" name="doctorName" required>
+                                    <option value="">Select Doctor</option>
+                                </select>*@
+                            </div>
+
+                            <div class="form-group-1">
+                                <label for="AppointmentDate">AppointmentDate:</label>
+                                <input type="date" id="AppointmentDate" name="AppointmentDate" required>
+                            </div>
+
+                            <div class="form-group-1">
+                                <label for="AppointmentTime">AppointmentTime:</label>
+                                <input type="time" id="AppointmentTime" name="AppointmentTime" required>
+                            </div>
+
+                            <div class="form-group-1">
+                                <label for="PatientEmail">PatientEmail:</label>
+                                <input type="email" id="PatientEmail" name="PatientEmail" required>
+                            </div>
+
+                            <input type="submit" value="Book Appointment" class="submit-button-1">
+                        </form>
+
                     </div>
                 </div>
             </div>
-        }
+        </div>
     </div>
-</div>
+
+</body>
+</html>

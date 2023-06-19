@@ -9,30 +9,27 @@ namespace ClinicManagementSystem.Controllers
     {
         private readonly IBookAppointmentRepository _bookAppointmentRepository;
 
-
         public BookAppointmentController(IBookAppointmentRepository bookAppointmentRepository)
         {
             _bookAppointmentRepository = bookAppointmentRepository;
             
         }
-        [HttpGet]
-        public async Task<IActionResult> BookAppointmentInput()
+
+        [HttpPost]
+        public async Task<IActionResult> BookAppointment(BookAppointment AppointmentCredentials)
         {
-            try
+            if (ModelState.IsValid)
             {
-                List<DoctorModel> appointmentData = await _bookAppointmentRepository.BookAppointmentAsync();
-                return View("~/Views/Home/AvailableDoctorDetails.cshtml", appointmentData);
+                var result = await _bookAppointmentRepository.AppointmentAsync(AppointmentCredentials);
+
+                if (result == "Appointment Booked Sucessful")
+                {
+                    return View("~/Views/Home/PatientLoginPortal.cshtml");
+
+                }
             }
-            catch (Exception ex)
-            {
-                // Handle the exception or log the error
-                return RedirectToAction("BookAppointment");
-            }
+            return View("~/Views/Home/AvailableDoctorDetails.cshtml");
+
         }
-
-
-
-
-
     }
 }

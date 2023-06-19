@@ -4,8 +4,14 @@ namespace ClinicManagementSystem.Models
 {
     public class BookAppointment
     {
-        // public List<DoctorModel> Doctordetails { get; set; }
-        public DateTime SelectedDateTime { get; set; }
+        public String? Doctor_Name { get; set; }
+
+        public String? AppointmentDate { get; set; }
+
+        public String? AppointmentTime { get; set; }
+
+        public String? PatientEmail { get; set; }
+
 
     }
 }

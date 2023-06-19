@@ -11,8 +11,7 @@ namespace ClinicManagementSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ILoginRepository _loginRepository;
-        private object _patientRepository;
-
+        
         public HomeController(ILogger<HomeController> logger, ILoginRepository loginRepository)
         {
             _logger = logger;
@@ -57,10 +56,10 @@ namespace ClinicManagementSystem.Controllers
             return View();
         }
        
-        public IActionResult BookAppointment()
-        {
-            return View();
-        }
+        //public IActionResult BookAppointmentInput()
+        //{
+        //    return View();
+        //}
 
         
         public IActionResult Privacy()

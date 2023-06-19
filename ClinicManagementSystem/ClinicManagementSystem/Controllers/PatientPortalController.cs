@@ -22,19 +22,21 @@ namespace ClinicManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 PatientModel portalData = await _patientportalRepository.PatientPortalAsync(newpatient.PatientEmail);
-                return View("~/Views/Home/PatientPortal.cshtml", portalData);
-                //if (portalData != null)
-                //{
-                //    return RedirectToAction("PatientPortal", portalData);
-                //}
-                //else
-                //{
-                //    ModelState.AddModelError("", "Invalid email");
-                //}
+                List<BookAppointment> appointmentData = await _patientportalRepository.PatientAppointmentPortalAsync(newpatient);
+
+                PatientPortalViewModel viewModel = new PatientPortalViewModel
+                {
+                    PortalData = portalData,
+                    AppointmentData = appointmentData
+                };
+
+                return View("~/Views/Home/PatientPortal.cshtml", viewModel);
             }
+
             return RedirectToAction("PatientPortal");
         }
 
-       
+
+
     }
 }
