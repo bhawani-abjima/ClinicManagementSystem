@@ -1,8 +1,7 @@
 ﻿using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
-using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
+
 
 namespace ClinicManagementSystem.Controllers
 {
@@ -17,20 +16,14 @@ namespace ClinicManagementSystem.Controllers
 
         
         [HttpPost]
-        public async Task<IActionResult> PatientLoginPortal(PatientPortalModel newpatient)
+        public async Task<IActionResult> PatientLoginPortal(PatientPortalModel newpatientdata)
         {
             if (ModelState.IsValid)
             {
-                PatientModel portalData = await _patientportalRepository.PatientPortalAsync(newpatient.PatientEmail);
-                List<BookAppointment> appointmentData = await _patientportalRepository.PatientAppointmentPortalAsync(newpatient);
+                PatientModel portalData = await _patientportalRepository.PatientPortalData(newpatientdata.PatientEmail);
+               // BookAppointment appointmentData = await _patientportalRepository.PatientAppointmentPortalAsync(newpatient.PatientEmail);
 
-                PatientPortalViewModel viewModel = new PatientPortalViewModel
-                {
-                    PortalData = portalData,
-                    AppointmentData = appointmentData
-                };
-
-                return View("~/Views/Home/PatientPortal.cshtml", viewModel);
+               return View("~/Views/Home/PatientPortal.cshtml", portalData);
             }
 
             return RedirectToAction("PatientPortal");

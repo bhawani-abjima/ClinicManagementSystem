@@ -1,4 +1,4 @@
-﻿using ClinicManagementSystem.Contracts;
+﻿    using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;

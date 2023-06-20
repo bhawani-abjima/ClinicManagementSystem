@@ -16,7 +16,7 @@ namespace ClinicManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> BookAppointment(BookAppointment AppointmentCredentials)
+        public async Task<IActionResult> BookAppointmentInput(BookAppointment AppointmentCredentials)
         {
             if (ModelState.IsValid)
             {

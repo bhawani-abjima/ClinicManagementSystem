@@ -2,6 +2,7 @@
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Build.ObjectModelRemoting;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
@@ -39,7 +40,7 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-     
+           
 
 
         public IActionResult DoctorLoginPortal()

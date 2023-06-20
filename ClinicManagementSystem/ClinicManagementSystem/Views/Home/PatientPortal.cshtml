@@ -1,5 +1,4 @@
-﻿@model ClinicManagementSystem.Models.PatientPortalModel
-
+﻿@model ClinicManagementSystem.Models.PatientModel
 
 @{
     ViewData["Title"] = "Patient Portal";
@@ -13,68 +12,60 @@
     .patient-name {
         color: red;
     }
+
+    .green-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .full-width-card {
+        width: 100%;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .two-column-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 16px;
+    }
+
 </style>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-5 offset-md-1">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title"><b>Patient Portal</b></div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p><b>Patient First Name:</b> <span class="patient-name"><b>@Model.Patient.PatientFirstName</b></span></p>
-                            <p><b>Patient Last Name:</b> <span class="patient-name"><b>@Model.Patient.PatientLastName</b></span></p>
-                            <p><b>Age:</b> <span class="patient-detail">@Model.Patient.Age</span></p>
-                            <p><b>Gender:</b> <span class="patient-detail">@Model.Patient.Gender</span></p>
-                            <p><b>Phone No:</b> <span class="patient-detail">@Model.Patient.PhoneNo</span></p>
-                            <p><b>Email:</b> <span class="patient-detail">@Model.Patient.Email</span></p>
-                            <p><b>Martial Status:</b> <span class="patient-detail">@Model.Patient.MartialStatus</span></p>
-                            <p><b>Date of Birth:</b> <span class="patient-detail">@Model.Patient.DateOfBirth.ToShortDateString()</span></p>
-                        </div>
-                        <div class="col-md-6">
-                            <p><b>City:</b> <span class="patient-detail">@Model.Patient.City</span></p>
-                            <p><b>State:</b> <span class="patient-detail">@Model.Patient.State</span></p>
-                            <p><b>Address:</b> <span class="patient-detail">@Model.Patient.Address</span></p>
-                            <p><b>Height:</b> <span class="patient-detail">@Model.Patient.Height</span></p>
-                            <p><b>Weight:</b> <span class="patient-detail">@Model.Patient.Weight</span></p>
-                            <p><b>Disease Brief:</b> <span class="patient-detail">@Model.Patient.DiseaseBrief</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title"><b>Appointment</b></div>
-                </div>
-                <div class="card-body">
-                    <div class="col-md-6">
-                        <div>
-                            <h3>Doctor Name:</h3>
-                            <p>@Model.Appointment.Doctor_Name</p>
-                        </div>
-
-                        <div>
-                            <h3>Appointment Date:</h3>
-                            <p>@Model.Appointment.AppointmentDate</p>
-                        </div>
-
-                        <div>
-                            <h3>Appointment Time:</h3>
-                            <p>@Model.Appointment.AppointmentTime</p>
-                        </div>
-
-                        <div>
-                            <h3>Patient Email:</h3>
-                            <p>@Model.Appointment.PatientEmail</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="card full-width-card">
+    <div class="card-header">
+        <h5 class="card-title">Patient Details</h5>
+        <li class="nav-item">
+           @* <a class="nav-link text-dark" asp-area="" asp-controller="PatientAppointmentDetails" asp-action="PatientAppoinements">My Appointment
+            </a>*@
+            <a href="@Url.Action("PatientAppoinements", "PatientAppointmentDetails", new { Email = Model.Email })" class="btn btn-success">My Appointment</a>
+        </li>
+    </div>
+    <div class="card-body">
+        <div class="two-column-layout">
+            <p><strong>First Name:</strong> @Model.PatientFirstName</p>
+            <p><strong>Last Name:</strong> @Model.PatientLastName</p>
+            <p><strong>Age:</strong> @Model.Age</p>
+            <p><strong>Gender:</strong> @Model.Gender</p>
+            <p><strong>Phone No:</strong> @Model.PhoneNo</p>
+            <p><strong>Email:</strong> @Model.Email</p>
+            <p><strong>Marital Status:</strong> @Model.MartialStatus</p>
+            <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()</p>
+            <p><strong>City:</strong> @Model.City</p>
+            <p><strong>State:</strong> @Model.State</p>
+            <p><strong>Address:</strong> @Model.Address</p>
+            <p><strong>Height:</strong> @Model.Height</p>
+            <p><strong>Weight:</strong> @Model.Weight</p>
+            <p><strong>Disease Brief:</strong> @Model.DiseaseBrief</p>
         </div>
     </div>
 </div>

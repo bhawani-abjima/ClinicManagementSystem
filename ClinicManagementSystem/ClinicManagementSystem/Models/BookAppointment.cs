@@ -1,14 +1,17 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 
 namespace ClinicManagementSystem.Models
 {
     public class BookAppointment
     {
-        public String? Doctor_Name { get; set; }
+        public String DoctorName { get; set; }
+        
+        [DataType(DataType.Date)]
+        public DateTime AppointmentDate { get; set; }
 
-        public String? AppointmentDate { get; set; }
-
-        public String? AppointmentTime { get; set; }
+        [DataType(DataType.Time)]
+        public TimeSpan AppointmentTime { get; set; }
 
         public String? PatientEmail { get; set; }
 
