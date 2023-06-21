@@ -5,7 +5,7 @@ namespace ClinicManagementSystem.Models
 {
     public class BookAppointment
     {
-        public String DoctorName { get; set; }
+        public String? DoctorEmail { get; set; }
         
         [DataType(DataType.Date)]
         public DateTime AppointmentDate { get; set; }

@@ -1,4 +1,4 @@
-﻿    using ClinicManagementSystem.Connection;
+﻿using ClinicManagementSystem.Connection;
 using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using Dapper;
@@ -15,18 +15,20 @@ namespace ClinicManagementSystem.Repository
             
             _connectionContext = connectionContext;
         }
-        public async Task<DoctorModel> DoctorPortalAsync(string RegistrationNo)
-        {
+       
 
+        public DoctorModel DoctorPortalAsync(string DoctorEmail)
+        {
             try
             {
                 using (var connection = _connectionContext.CreateConnection())
                 {
-                    var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@RegistrationNo", RegistrationNo);
-               
+                    //var dynamicParameters = new DynamicParameters();
+                    //dynamicParameters.Add("@DoctorEmail", DoctorEmail);
 
-                    DoctorModel doctorData = await connection.QueryFirstOrDefaultAsync<DoctorModel>("sp_checkdoctorLogin", dynamicParameters, commandType: CommandType.StoredProcedure);
+
+                    var doctorData = connection.QueryFirstOrDefault<DoctorModel>("sp_GetDoctorAndAppointmentData",
+                        new{DoctorEmail = DoctorEmail}, commandType: CommandType.StoredProcedure);
 
                     return doctorData;
                 }
@@ -35,7 +37,6 @@ namespace ClinicManagementSystem.Repository
             {
                 throw ex;
             }
-
         }
     }
 }

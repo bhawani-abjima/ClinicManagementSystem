@@ -4,6 +4,6 @@ namespace ClinicManagementSystem.Contracts
 {
     public interface IDoctorPortalRepository
     {
-        Task<DoctorModel> DoctorPortalAsync(string RegistrationNo);
+        DoctorModel DoctorPortalAsync(string DoctorEmail);
     }
 }

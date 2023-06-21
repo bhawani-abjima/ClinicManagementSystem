@@ -1,4 +1,4 @@
-﻿    using ClinicManagementSystem.Contracts;
+﻿using ClinicManagementSystem.Contracts;
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +14,18 @@ namespace ClinicManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DoctorLoginPortal(DoctorPortalModel newdoctor)
-        {
+        public IActionResult DoctorLoginPortal(string DoctorEmail)
+        {   
             if (ModelState.IsValid)
             {
-               DoctorModel portalData = await _doctorportalrepository.DoctorPortalAsync(newdoctor.RegistrationNo);
+               var portalData = _doctorportalrepository.DoctorPortalAsync(DoctorEmail);
                 return View("~/Views/Home/DoctorPortal.cshtml", portalData);
-               
+                ////var doctorModel = portalData.FirstOrDefault();
+                // if (doctorModel != null)
+                // {
+                //     return View("~/Views/Home/DoctorPortal.cshtml", doctorModel);
+                // }
+
             }
             return RedirectToAction("DoctorPortal");
         }

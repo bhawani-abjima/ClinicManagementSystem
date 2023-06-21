@@ -21,7 +21,7 @@ namespace ClinicManagementSystem.Repository
                 using (var _connectionString = _connectionContext.CreateConnection())
                 {
                     var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@DoctorName", appointmentCredentials.DoctorName);
+                    dynamicParameters.Add("@DoctorEmail", appointmentCredentials.DoctorEmail);
                     dynamicParameters.Add("@AppointmentDate", appointmentCredentials.AppointmentDate);
                     dynamicParameters.Add("@AppointmentTime", appointmentCredentials.AppointmentTime);
                     dynamicParameters.Add("@PatientEmail", appointmentCredentials.PatientEmail);

@@ -2,6 +2,6 @@
 {
     public class DoctorPortalModel
     {
-        public string RegistrationNo { get; set; }
+        public string? DoctorEmail { get; set; }
     }
 }

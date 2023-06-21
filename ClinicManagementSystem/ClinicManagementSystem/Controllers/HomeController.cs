@@ -40,7 +40,7 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-           
+
 
 
         public IActionResult DoctorLoginPortal()
