@@ -42,6 +42,8 @@
 
 </style>
 
+
+
 <div class="row justify-content-md-center">
     <div class="col-md-5">
         @using (Html.BeginForm("LoginUser", "Login", FormMethod.Post))
@@ -79,7 +81,7 @@
                         @Html.ValidationMessageFor(m => m.L_UserType, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="login-button">
-                        <input type="submit" name="Login" value="LoginUser" />
+                         <input type="submit" name="Login" value="LoginUser" />
                     </div>
                 </div>
             </div>

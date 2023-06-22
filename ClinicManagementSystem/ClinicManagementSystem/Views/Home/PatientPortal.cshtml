@@ -1,71 +1,222 @@
 ﻿@model ClinicManagementSystem.Models.PatientModel
-
 @{
-    ViewData["Title"] = "Patient Portal";
+    ViewData["Title"] = "Doctor Details";
 }
 
-<style>
-    .patient-detail {
-        color: blue;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add your custom styles here */
+        .form-group label {
+            font-weight: bold;
+            color: black;
+        }
 
-    .patient-name {
-        color: red;
-    }
+        .form-group {
+            color: blue;
+        }
 
-    .green-button {
-        background-color: green;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
+        .form-head {
+            color: red;
+            font-weight: bold;
+            font-size: 50px;
+        }
 
-    .full-width-card {
-        width: 100%;
-    }
+        .navbar {
+            margin-bottom: 0;
+        }
 
-    .card-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background-color: lightblue;
+            padding: 15px;
+            border: 2px solid double;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .two-column-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        font-size: 16px;
-    }
+        .content {
+            margin-left: 30%;
+            padding: 15px;
+        }
 
-</style>
+        .doctor-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-<div class="card full-width-card">
-    <div class="card-header">
-        <h5 class="card-title">Patient Details</h5>
-        <li class="nav-item">
-           @* <a class="nav-link text-dark" asp-area="" asp-controller="PatientAppointmentDetails" asp-action="PatientAppoinements">My Appointment
-            </a>*@
-            <a href="@Url.Action("PatientAppoinements", "PatientAppointmentDetails", new { Email = Model.Email })" class="btn btn-success">My Appointment</a>
-        </li>
-    </div>
-    <div class="card-body">
-        <div class="two-column-layout">
-            <p><strong>First Name:</strong> @Model.PatientFirstName</p>
-            <p><strong>Last Name:</strong> @Model.PatientLastName</p>
-            <p><strong>Age:</strong> @Model.Age</p>
-            <p><strong>Gender:</strong> @Model.Gender</p>
-            <p><strong>Phone No:</strong> @Model.PhoneNo</p>
-            <p><strong>Email:</strong> @Model.Email</p>
-            <p><strong>Marital Status:</strong> @Model.MartialStatus</p>
-            <p><strong>Date of Birth:</strong> @Model.DateOfBirth.ToShortDateString()</p>
-            <p><strong>City:</strong> @Model.City</p>
-            <p><strong>State:</strong> @Model.State</p>
-            <p><strong>Address:</strong> @Model.Address</p>
-            <p><strong>Height:</strong> @Model.Height</p>
-            <p><strong>Weight:</strong> @Model.Weight</p>
-            <p><strong>Disease Brief:</strong> @Model.DiseaseBrief</p>
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .rightbar {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: honeydew;
+            padding: 15px;
+            display:block;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .newcard {
+            width:100%;
+            height: 350px;
+            box-shadow: 2px 2px 4px grey;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .additional-row {
+            display: flex;
+
+            justify-content: center;
+          
+        
+        }
+
+        .additional-card {
+            width: 200px;
+            height:200px;
+            box-shadow: 2px 2px 4px grey;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+            margin-bottom:15px;
+            border-radius:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Navbar content -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="sidebar col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <span class="form-head">@Model.PatientFirstName @Model.PatientLastName</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="https://img.freepik.com/premium-vector/user-avatar-icon-black-white_755164-9771.jpg?w=740" class="img" alt="Sample Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Age:</label>
+                            <span>@Model.Age</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender:</label>
+                            <span>@Model.Gender</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone No:</label>
+                            <span>@Model.PhoneNo</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <span>@Model.Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Marital Status:</label>
+                            <span>@Model.MartialStatus</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth:</label>
+                            <span>@Model.DateOfBirth</span>
+                        </div>
+                        <div class="form-group">
+                            <label>City:</label>
+                            <span>@Model.City</span>
+                        </div>
+                        <div class="form-group">
+                            <label>State:</label>
+                            <span>@Model.State</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Address:</label>
+                            <span>@Model.Address</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Height:</label>
+                            <span>@Model.Height</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Weight:</label>
+                            <span>@Model.Weight</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Disease Brief:</label>
+                            <span>@Model.DiseaseBrief</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-action="EditProfile">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rightbar">
+                <div class="row">
+                    
+                    <div class="additional-row">
+                        <div class="additional-card">
+                            <img src="https://img.freepik.com/free-vector/desk-calendar-with-marked-dates-3d-cartoon-style-icon-planning-time-meeting-scheduling-flat-vector-illustration-appointment-deadline-agenda-reminder-time-management-concept_74855-25964.jpg?w=740&t=st=1687438448~exp=1687439048~hmac=5edafebf523c36f299276228bcc1409cdbe158cdaf42d63ca73bb75c7f00ee58" class="img" alt="Sample Image">
+                            <a href="@Url.Action("PatientAppoinements", "PatientAppointmentDetails", new { Email = Model.Email })">My Appointment</a>
+
+                        </div>
+                        <div class="additional-card">
+                            Card 5
+                        </div>
+                        <div class="additional-card">
+                            Card 6
+                        </div>
+                    </div>
+                </div>
+                <div class="newcard">
+                    New Card
+                </div>
+               
+            </div>
         </div>
     </div>
-</div>
+</body>
+</html>

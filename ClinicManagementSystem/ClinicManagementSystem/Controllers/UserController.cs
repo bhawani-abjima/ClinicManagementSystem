@@ -19,15 +19,17 @@ namespace ClinicManagementSystem.Controllers
 
         
 
-        public async Task<string> SignUpUser(UserModel user)
+        public async Task<IActionResult> SignUpUser(UserModel user)
         {
             if (ModelState.IsValid)
             {
                 var result = await _userRepository.AddAsync(user);
-                return result;
-
+                if (result == "Registration Successful")
+                {
+                    return RedirectToAction("LoginUser", "Home");
+                }
             }
-            else { throw new Exception("Invalid model state."); }
+            return RedirectToAction("Index", "Home");
 
         }
 

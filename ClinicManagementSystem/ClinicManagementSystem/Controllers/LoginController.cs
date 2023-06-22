@@ -42,7 +42,7 @@ namespace ClinicManagementSystem.Controllers
 
                         return RedirectToAction("AdminPortal", "Home");
                     }
-
+                    
                 }
 
 

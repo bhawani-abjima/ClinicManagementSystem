@@ -9,6 +9,13 @@
     ViewBag.Title = "Sign Up New User";
     //Layout = "/Views/User/SignUpUser.cshtml";
 }
+<script>
+    function showAlert() {
+        
+        alert("Registaration Sucessful Please Log in");
+         // window.location.href = @Url.Action("LoginUser", "Home")
+    }
+</script>
 <div class="row justify-content-md-center">
     <div class="col-md-5">
         @using (Html.BeginForm("SignUpUser", "User", FormMethod.Post))
@@ -56,7 +63,7 @@
                         @Html.ValidationMessageFor(m => m.UserType, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="d-grid gap-2 col-4 mx-auto">
-                        <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" />
+                            <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" onclick="showAlert()" />
                     </div>
                 </div>
             </div>
