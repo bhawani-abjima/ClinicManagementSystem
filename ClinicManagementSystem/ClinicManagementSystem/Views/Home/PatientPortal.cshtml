@@ -35,7 +35,7 @@
             left: 0;
             width: 60%;
             height: 100%;
-            background-color: lightblue;
+            background-color: white;
             padding: 15px;
             border: 2px solid double;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -67,7 +67,7 @@
             right: 0;
             width: 40%;
             height: 100%;
-            background-color: honeydew;
+            background-color: ;
             padding: 15px;
             display:block;
             flex-wrap: wrap;
@@ -82,9 +82,9 @@
 
         .newcard {
             width:100%;
-            height: 350px;
-            box-shadow: 2px 2px 4px grey;
-            background-color: lightgreen;
+            height: 320px;
+           
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -103,8 +103,8 @@
 
         .additional-card {
             width: 200px;
-            height:200px;
-            box-shadow: 2px 2px 4px grey;
+            height:135px;
+            box-shadow: 0 1px 2px grey;
             background-color: white;
             display: flex;
             justify-content: center;
@@ -115,7 +115,7 @@
             margin-bottom:15px;
             border-radius:10px;
         }
-
+       
     </style>
 </head>
 <body>
@@ -141,54 +141,55 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Age:</label>
-                            <span>@Model.Age</span>
+                            <label style="display: inline-block; width: 200px;">Age:</label>
+                            <span style="display: inline-block;">@Model.Age</span>
                         </div>
                         <div class="form-group">
-                            <label>Gender:</label>
-                            <span>@Model.Gender</span>
+                            <label style="display: inline-block; width: 200px;">Gender:</label>
+                            <span style="display: inline-block;">@Model.Gender</span>
                         </div>
                         <div class="form-group">
-                            <label>Phone No:</label>
-                            <span>@Model.PhoneNo</span>
+                            <label style="display: inline-block; width: 200px;">Phone No:</label>
+                            <span style="display: inline-block;">@Model.PhoneNo</span>
                         </div>
                         <div class="form-group">
-                            <label>Email:</label>
-                            <span>@Model.Email</span>
+                            <label style="display: inline-block; width: 200px;">Email:</label>
+                            <span style="display: inline-block;">@Model.Email</span>
                         </div>
                         <div class="form-group">
-                            <label>Marital Status:</label>
-                            <span>@Model.MartialStatus</span>
+                            <label style="display: inline-block; width: 200px;">Marital Status:</label>
+                            <span style="display: inline-block;">@Model.MartialStatus</span>
                         </div>
                         <div class="form-group">
-                            <label>Date of Birth:</label>
-                            <span>@Model.DateOfBirth</span>
+                            <label style="display: inline-block; width: 200px;">Date of Birth:</label>
+                            <span style="display: inline-block;">@Model.DateOfBirth</span>
                         </div>
                         <div class="form-group">
-                            <label>City:</label>
-                            <span>@Model.City</span>
+                            <label style="display: inline-block; width: 200px;">City:</label>
+                            <span style="display: inline-block;">@Model.City</span>
                         </div>
                         <div class="form-group">
-                            <label>State:</label>
-                            <span>@Model.State</span>
+                            <label style="display: inline-block; width: 200px;">State:</label>
+                            <span style="display: inline-block;">@Model.State</span>
                         </div>
                         <div class="form-group">
-                            <label>Address:</label>
-                            <span>@Model.Address</span>
+                            <label style="display: inline-block; width: 100px;">Address:</label>
+                            <span style="display: inline-block;">@Model.Address</span>
                         </div>
                         <div class="form-group">
-                            <label>Height:</label>
-                            <span>@Model.Height</span>
+                            <label style="display: inline-block; width: 100px;">Height:</label>
+                            <span style="display: inline-block;">@Model.Height</span>
                         </div>
                         <div class="form-group">
-                            <label>Weight:</label>
-                            <span>@Model.Weight</span>
+                            <label style="display: inline-block; width: 100px;">Weight:</label>
+                            <span style="display: inline-block;">@Model.Weight</span>
                         </div>
                         <div class="form-group">
-                            <label>Disease Brief:</label>
-                            <span>@Model.DiseaseBrief</span>
+                            <label style="display: inline-block; width: 100px;">Disease Brief:</label>
+                            <span style="display: inline-block;">@Model.DiseaseBrief</span>
                         </div>
                     </div>
+
                     <div class="card-footer">
                         <a asp-action="EditProfile">Edit Profile</a>
                     </div>
@@ -199,24 +200,28 @@
                     
                     <div class="additional-row">
                         <div class="additional-card">
-                            <img src="https://img.freepik.com/free-vector/desk-calendar-with-marked-dates-3d-cartoon-style-icon-planning-time-meeting-scheduling-flat-vector-illustration-appointment-deadline-agenda-reminder-time-management-concept_74855-25964.jpg?w=740&t=st=1687438448~exp=1687439048~hmac=5edafebf523c36f299276228bcc1409cdbe158cdaf42d63ca73bb75c7f00ee58" class="img" alt="Sample Image">
-                            <a href="@Url.Action("PatientAppoinements", "PatientAppointmentDetails", new { Email = Model.Email })">My Appointment</a>
+                         <a href="@Url.Action("PatientAppoinements", "PatientAppointmentDetails", new { Email = Model.Email })">My Appointment</a>
 
                         </div>
-                        <div class="additional-card">
-                            Card 5
-                        </div>
-                        <div class="additional-card">
-                            Card 6
-                        </div>
+                        <a href="https://www.apollopharmacy.in/?msclkid=9b979044a6ee1cfb09e8f4d196c615e7&utm_source=bing&utm_medium=cpc&utm_campaign=Apollo_Pharmacy_Non-Brand_RestCities_New&utm_term=buy%20medicine%20online%20in%20india&utm_content=Medicine%20Online%20EM" class="additional-card">
+                            Buy Medicine
+                        </a>
+
+                        <a href="https://deepai.org/chat" class="additional-card">
+                            Chat With US
+                        </a>
                     </div>
                 </div>
-                <div class="newcard">
-                    New Card
+                @*<a href="https://www.bing.com/ck/a?!&&p=c28eec998d8afb28JmltdHM9MTY4NzM5MjAwMCZpZ3VpZD0zZWQwOTMyNC1hMWUyLTY2MmYtMjZjMC04MWZlYTAxMDY3Y2EmaW5zaWQ9NTI0Nw&ptn=3&hsh=3&fclid=3ed09324-a1e2-662f-26c0-81fea01067ca&psq=youtube+healthy+lifestyle&u=a1aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1ZTnN1bmVHQnNNWQ&ntb=1">
+                <div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YNsuneGBsMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
-               
+*@
+                
             </div>
+            
         </div>
+        
     </div>
 </body>
 </html>

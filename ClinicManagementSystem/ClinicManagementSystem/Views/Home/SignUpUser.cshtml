@@ -1,26 +1,54 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model ClinicManagementSystem.Models.UserModel
+﻿@model ClinicManagementSystem.Models.UserModel
 
 @{
     ViewBag.Title = "Sign Up New User";
-    //Layout = "/Views/User/SignUpUser.cshtml";
 }
+
+<style>
+    .card {
+        width: 70%;
+        text-align: left;
+        border-radius: 45px;
+        box-shadow: 0 2px 5px black;
+        margin: 40px auto;
+    }
+
+    .card-title {
+        color: black;
+        border-radius: 45px;
+        padding: 10px 40px;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .signup-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        border: none;
+    }
+
+        .signup-button input[type="submit"] {
+            background: linear-gradient(to left, #ff3399 0%, #ff9933 100%);
+            padding: 7px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+        }
+</style>
+
 <script>
     function showAlert() {
-        
-        alert("Registaration Sucessful Please Log in");
-         // window.location.href = @Url.Action("LoginUser", "Home")
+        alert("Registration Successful! Please Log in");
     }
 </script>
+
 <div class="row justify-content-md-center">
     <div class="col-md-5">
         @using (Html.BeginForm("SignUpUser", "User", FormMethod.Post))
         {
-            //@Html.ValidationSummary()
             @Html.AntiForgeryToken()
 
             <div class="card">
@@ -47,11 +75,6 @@
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
                     </div>
-                    @* <div class="form-group">
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Confim Password" })
-                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "badge badge-danger" })
-                </div>*@
                     <div class="form-group">
                         @Html.LabelFor(m => m.UserType)
                         @Html.DropDownListFor(m => m.UserType, new SelectList(new[]
@@ -62,12 +85,11 @@
                     }, "Value", "Text"), "Select User Type", new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.UserType, "", new { @class = "badge badge-danger" })
                     </div>
-                    <div class="d-grid gap-2 col-4 mx-auto">
-                            <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" onclick="showAlert()" />
+                    <div class="signup-button">
+                        <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" onclick="showAlert()" />
                     </div>
                 </div>
             </div>
-
         }
     </div>
 </div>

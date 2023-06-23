@@ -5,40 +5,41 @@
 }
 
 <style>
+    
     .card {
-       
-        width:70%;
+        width: 70%;
         text-align: left;
-        border-radius: 5px;
+        border-radius: 45px;
         box-shadow: 0 2px 5px black;
         margin: 40px auto;
     }
 
     .card-title {
         color: black;
-        background-color:mintcream;
+        border-radius: 45px;
         padding: 10px 40px;
         font-size: 25px;
         font-weight: bold;
         margin-bottom: 10px;
-        text-align:center;
+        text-align: center;
+       
     }
 
     .login-button {
         display: flex;
         justify-content: center;
         margin-top: 20px;
-        border:none;
+        border: none;
         
     }
-    .login-button input[type="submit"] {
-        background-color:chartreuse;
-        f
-        color: white;
-        padding: 7px 30px;
-        font-size: 18px;
-        border:none;
-    }
+
+        .login-button input[type="submit"] {
+            background: linear-gradient(to left, #ff3399 0%, #ff9933 100%);
+            padding: 7px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+        }
 
 </style>
 
@@ -81,7 +82,7 @@
                         @Html.ValidationMessageFor(m => m.L_UserType, "", new { @class = "badge badge-danger" })
                     </div>
                     <div class="login-button">
-                         <input type="submit" name="Login" value="LoginUser" />
+                        <input type="submit" name="Login" value="LoginUser" />
                     </div>
                 </div>
             </div>

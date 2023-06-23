@@ -11,12 +11,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ClinicManagementSystem.styles.css" asp-append-version="true" />
+
+   
+  
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ClinicManagementSystem</a>
+        <nav class="navbar navbar-expand-sm navbar-light navbar-nav-scroll fixed-top" style="background: linear-gradient(to right, #6600cc 0%, #cc99ff 100%); height:7%">
+     
+
+        <div class="container-fluid">
+               @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ClinicManagementSystem</a>*@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,32 +29,32 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-primary btn-sm">Home</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-light btn-sm">Home</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HealthInformation">Health Information</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HealthInformation"><button type="button" class="btn btn-light btn-sm">Health Information</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Career">Career</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Career"><button type="button" class="btn btn-light btn-sm">Career</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services">Our Services</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services"><button type="button" class="btn btn-light btn-sm">Our Services</button></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="AvailableDoctorDetails" asp-action="AvailableDoctor">
-                                <button type="submit" class="btn btn-danger">Book Appointment</button>
+                                <button type="submit" class="btn btn-light">Book Appointment</button>
                             </a>
 
 
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoginUser"><button type="button" class="btn btn-outline-primary">Login</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoginUser"><button type="button" class="btn btn-light">Login</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUpUser"><button type="button" class="btn btn-outline-primary">Sign Up</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUpUser"><button type="button" class="btn btn-light">Sign Up</button></a>
                         </li>
                         
                     </ul>
@@ -57,7 +62,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" style="padding-top:5%;">
         <main role="main" class="pb-3">
             @RenderBody()
 
@@ -65,15 +70,15 @@
            
         </main>
     </div>
-    <footer class="border-top footer bg-light" style="position: fixed; bottom: 0; width: 100%; height: 10%;">
+    <footer class="border-top footer" style="position: fixed; bottom: 0; width: 100%; height: 10%; background:linear-gradient(to left, #6600cc 0%, #cc99ff 100%);height:7%">
         <div class="container d-flex justify-content-between align-items-center h-100">
             <div>
-                <a class="btn btn-outline-warning me-2" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                <a class="btn btn-outline-primary" asp-area="" asp-controller="Home" asp-action="Review">Review</a>
+                <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="Review">Review</a>
             </div>
 
             <div class="text-center">
-                &copy; @DateTime.Now.Year - ClinicManagementSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                &copy; @DateTime.Now.Year - ClinicManagementSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy"class="btn btn-light btn-sm">Privacy</a>
             </div>
         </div>
     </footer>

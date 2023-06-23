@@ -31,7 +31,7 @@ namespace ClinicManagementSystem.Controllers
                 if (newpatient == "RegistrationSuccess")
                 {
                    
-                    return RedirectToAction("PatientPortal");
+                    return RedirectToAction("SignUpUser","Home");
                 }
                 else
                 {
