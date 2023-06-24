@@ -3,17 +3,26 @@
 @{
     ViewData["Title"] = "PatientRegistration";
 }
+<style>
+    .form-container {
+        background-color: lightblue;
+        padding: 20px;
+        width: 70%;
+        margin: 0 auto;
+    }
+</style>
 
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title"><b>Patient Registration</b></div>
+                    <div class="card-title" style="text-align:center;"><b><h5>Patient Registration</h5></b></div>
                 </div>
                 <div class="card-body">
-                    <form asp-action="PatientRegistration" asp-controller="PatientRegistration" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-container">
+                        <form asp-action="PatientRegistration" asp-controller="PatientRegistration" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -152,11 +161,11 @@
                                 <div class="text-muted">
                                     Provide a brief description of the disease or condition. Also provide disease history.
                                 </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Submit" class="btn btn-primary" />
-                                </div>
-                            </div>
-                    </form>
+                                    <div class="form-group">
+                                        <input type="submit" value="Submit" class="btn btn-primary" />
+                                    </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,11 +174,3 @@
         <a asp-action="Index">Back to List</a>
     </div>
 </div>
-
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
-

@@ -6,18 +6,18 @@ using System.Data;
 
 namespace ClinicManagementSystem.Repository
 {
-    public class DoctorPortalRepository : IDoctorPortalRepository
+    public class EditPatientDetailsRepository : IEditPatientDetailsRepository
     {
         private readonly ConnectionContext _connectionContext;
 
-        public DoctorPortalRepository(ConnectionContext connectionContext)
+        public EditPatientDetailsRepository(ConnectionContext connectionContext)
         {
-
             _connectionContext = connectionContext;
+
         }
 
 
-        public DoctorModel DoctorPortalAsync(string DoctorEmail)
+        public PatientModel PatientEditPortal(string PatientEmail)
         {
             try
             {
@@ -27,10 +27,10 @@ namespace ClinicManagementSystem.Repository
                     //dynamicParameters.Add("@DoctorEmail", DoctorEmail);
 
 
-                    var doctorData = connection.QueryFirstOrDefault<DoctorModel>("sp_GetDoctorAndAppointmentData",
-                        new { DoctorEmail = DoctorEmail }, commandType: CommandType.StoredProcedure);
+                    var PatientEditData = connection.QueryFirstOrDefault<PatientModel>("sp_GetPatientDataForEdit",
+                        new { PatientEmail = PatientEmail }, commandType: CommandType.StoredProcedure);
 
-                    return doctorData;
+                    return PatientEditData;
                 }
             }
             catch (Exception ex)

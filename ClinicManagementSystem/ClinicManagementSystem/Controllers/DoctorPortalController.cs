@@ -29,5 +29,6 @@ namespace ClinicManagementSystem.Controllers
             }
             return RedirectToAction("DoctorPortal");
         }
+
     }
 }

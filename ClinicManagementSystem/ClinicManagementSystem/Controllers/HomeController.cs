@@ -40,7 +40,10 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-
+        public IActionResult EditPatientDetails()
+        {
+            return View();
+        }
 
 
         public IActionResult DoctorLoginPortal()

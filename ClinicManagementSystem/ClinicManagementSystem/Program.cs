@@ -16,6 +16,7 @@ builder.Services.AddScoped<IDoctorPortalRepository,DoctorPortalRepository>();
 builder.Services.AddScoped<IAvailableDoctorDetailsRepository,AvailableDoctorDetailsRepository>();
 builder.Services.AddScoped<IBookAppointmentRepository, BookAppointmentRepository>();
 builder.Services.AddScoped<IPatientAppointmentDetails,PatientAppointmentDetailsRepository>();
+builder.Services.AddScoped<IEditPatientDetailsRepository, EditPatientDetailsRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

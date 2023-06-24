@@ -1,7 +1,4 @@
 ﻿@model ClinicManagementSystem.Models.DoctorModel
-@{
-    ViewData["Title"] = "Doctor Details";
-}
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +31,7 @@
             left: 0;
             width: 25%;
             height: 100%;
-            background-color: lightblue; 
+            background-color: lightblue;
             padding: 15px;
             border: 2px solid double;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -49,7 +46,6 @@
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
-            
         }
 
         .img {
@@ -60,20 +56,20 @@
             width: 100px;
             height: 100px;
         }
-        .appointmentbox{
+
+        .appointmentbox {
             position: absolute;
             top: 70px;
             right: 0;
             width: 75%;
             height: 100%;
-            background-color:lightblue;
+            background-color: lightblue;
             border: 2px solid double;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            
         }
 
-        .appointmentheader{
+        .appointmentheader {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 10px;
@@ -84,7 +80,7 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
-            border-radius:5px;
+            border-radius: 5px;
             background-color: #f8f9fa;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 10px;
@@ -102,25 +98,25 @@
             <div class="sidebar col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        
+
                         <div class="card-title">
-                                <img src="https://i.pinimg.com/originals/64/34/d7/6434d72ce9e16251c4f41f4e5a146567.png" class="img" alt="Sample Image" class="card-image">
+                            <img src="https://i.pinimg.com/originals/64/34/d7/6434d72ce9e16251c4f41f4e5a146567.png" class="img" alt="Sample Image" class="card-image">
                             <span class="doctor-name">
-                                    @Model.DoctorFirstName @Model.DoctorLastName
+                                @Model.DoctorFirstName @Model.DoctorLastName
                             </span>
                         </div>
                     </div>
                     <div class="card-header">
 
                         <div class="card-title">
-                            
-                                <label><b>Registration Number:</b></label>
-                                <span class="form-head">@Model.RegistrationNo</span>
-                         
+
+                            <label><b>Registration Number:</b></label>
+                            <span class="form-head">@Model.RegistrationNo</span>
+
                         </div>
                     </div>
                     <div class="card-body">
-                        
+
                         <div class="form-group">
                             <label>Email:</label>
                             <span>@Model.Email</span>
@@ -172,7 +168,7 @@
                                     <label>DiseaseBrief:</label>
                                     <span>@Model.DiseaseBrief</span>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -181,6 +177,6 @@
         </div>
     </div>
 
-   
+
 </body>
 </html>

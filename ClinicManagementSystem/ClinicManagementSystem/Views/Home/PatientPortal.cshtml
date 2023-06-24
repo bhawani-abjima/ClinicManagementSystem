@@ -35,7 +35,7 @@
             left: 0;
             width: 60%;
             height: 100%;
-            background-color: white;
+            background-color: powderblue;
             padding: 15px;
             border: 2px solid double;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -84,7 +84,7 @@
             width:100%;
             height: 320px;
            
-            background-color: white;
+            background-color: cornflowerblue;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -130,12 +130,12 @@
                     <div class="card-header">
                         <div class="card-title">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div>
                                     <span class="form-head">@Model.PatientFirstName @Model.PatientLastName</span>
                                 </div>
-                                <div class="col-md-4">
-                                    <img src="https://img.freepik.com/premium-vector/user-avatar-icon-black-white_755164-9771.jpg?w=740" class="img" alt="Sample Image">
-                                </div>
+                               @* <div class="col-md-4">
+                                    <img src="" class="img" alt="Sample Image">
+                                </div>*@
                             </div>
                         </div>
                     </div>
@@ -173,19 +173,19 @@
                             <span style="display: inline-block;">@Model.State</span>
                         </div>
                         <div class="form-group">
-                            <label style="display: inline-block; width: 100px;">Address:</label>
+                            <label style="display: inline-block; width: 200px;">Address:</label>
                             <span style="display: inline-block;">@Model.Address</span>
                         </div>
                         <div class="form-group">
-                            <label style="display: inline-block; width: 100px;">Height:</label>
+                            <label style="display: inline-block; width: 200px;">Height:</label>
                             <span style="display: inline-block;">@Model.Height</span>
                         </div>
                         <div class="form-group">
-                            <label style="display: inline-block; width: 100px;">Weight:</label>
+                            <label style="display: inline-block; width: 200px;">Weight:</label>
                             <span style="display: inline-block;">@Model.Weight</span>
                         </div>
                         <div class="form-group">
-                            <label style="display: inline-block; width: 100px;">Disease Brief:</label>
+                            <label style="display: inline-block; width: 200px;">Disease Brief:</label>
                             <span style="display: inline-block;">@Model.DiseaseBrief</span>
                         </div>
                     </div>
