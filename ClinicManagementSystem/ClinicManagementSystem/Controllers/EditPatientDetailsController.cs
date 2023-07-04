@@ -1,4 +1,6 @@
-﻿using ClinicManagementSystem.Contracts;
+﻿
+using ClinicManagementSystem.Contracts;
+using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,26 +17,34 @@ namespace ClinicManagementSystem.Controllers
             
         }
 
-      
+
         [HttpPost]
-        public IActionResult Patientdetailseditoption(string PatientEmail)
+        public IActionResult Patientdetailseditoption(string patientEmail)
         {
             if (ModelState.IsValid)
             {
-                var editportaldata = _editPatientDetailsRepository.PatientEditPortal(PatientEmail);
-                return View("~/Views/Home/DoctorPortal.cshtml", editportaldata);
-                ////var doctorModel = portalData.FirstOrDefault();
-                // if (doctorModel != null)
-                // {
-                //     return View("~/Views/Home/DoctorPortal.cshtml", doctorModel);
-                // }
-
+                var editportaldata = _editPatientDetailsRepository.PatientEditPortal(patientEmail);
+                return View("~/Views/Home/EditPatientDetails.cshtml", editportaldata);
             }
-            return RedirectToAction("DoctorPortal");
+
+            return RedirectToAction("AdminPortal");
         }
 
-      
-    
+        [HttpPost]
+        public IActionResult PatientdetailsUpdated(PatientModel patientupdate)
+        {
+            if (ModelState.IsValid)
+            {
+                _editPatientDetailsRepository.UpdatePatientDetails(patientupdate);
+                TempData["AlertMessage"] = "<script>alert('Patient Details Updated Successfull !') </script >";
+                return RedirectToAction("AdminPortal", "Home");
+            }
+
+            return RedirectToAction("Maintenance","Home");
+        }
+
+
+
 
     }
 }

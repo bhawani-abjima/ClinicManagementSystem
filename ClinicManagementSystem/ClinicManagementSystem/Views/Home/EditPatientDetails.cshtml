@@ -17,11 +17,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title" style="text-align:center;"><b><h5>Patient Details</h5></b></div>
+                    <div class="card-title" style="text-align:center;"><b>Patient Details</b></div>
                 </div>
                 <div class="card-body">
                     <div class="form-container">
-                        <form method="post">
+                        <form method="post" asp-action="PatientdetailsUpdated" asp-controller="EditPatientDetails">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -164,6 +164,8 @@
                                     <div class="form-group">
                                         <input type="submit" value="Submit" class="btn btn-primary" />
                                     </div>
+                                    </div>
+                                 </div>
                         </form>
                     </div>
                 </div>

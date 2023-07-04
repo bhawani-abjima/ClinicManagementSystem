@@ -2,8 +2,7 @@
 using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.VisualBasic.Syntax;
-using System.Linq.Expressions;
+
 
 namespace ClinicManagementSystem.Controllers
 {

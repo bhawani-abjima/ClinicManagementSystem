@@ -6,5 +6,7 @@ namespace ClinicManagementSystem.Contracts
     {
 
         PatientModel PatientEditPortal(string PatientEmail);
+
+        void UpdatePatientDetails(PatientModel patient);
     }
 }

@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\BhawaniSingh\Documents\GitHub\ClinicManagementSystem\ClinicManagementSystem\ClinicManagementSystem
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Appointments/GetAllAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEdldEFsbEFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/EditAppointmentDetails/AppointmentDetailsEditOption.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdEFwcG9pbnRtZW50RGV0YWlsc1xBcHBvaW50bWVudERldGFpbHNFZGl0T3B0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/AdminPortal.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBvcnRhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -36,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JSZWdpc3RyYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/EditDoctorDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0RG9jdG9yRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/EditPatientDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0UGF0aWVudERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/LoginUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Maintenance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWludGVuYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientAppointmentDetails.cshtml]

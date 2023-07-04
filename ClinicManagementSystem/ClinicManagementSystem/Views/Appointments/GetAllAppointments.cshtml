@@ -1,0 +1,91 @@
+﻿@model List<ClinicManagementSystem.Models.Appointment>
+
+@{
+    ViewData["Title"] = "GetAllAppointments";
+}
+
+<style>
+    .card-container {
+        width: 100%;
+        background-color: lightgrey;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .column-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .appointment-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .appointment-table th {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: lightgray; 
+        }
+
+        .appointment-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+    .edit-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
+
+<div class="card-container">
+    <h1>Appointments</h1>
+
+    <div class="column-card">
+        <table class="appointment-table">
+            <thead>
+                <tr>
+                    <th>Appointment Id</th>
+                    <th>Doctor Email</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Patient Email</th>
+                    <th>Appointment Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.AppointmentId</td>
+                        <td>@appointment.DoctorEmail</td>
+                        <td>@appointment.AppointmentDate</td>
+                        <td>@appointment.AppointmentTime</td>
+                        <td>@appointment.PatientEmail</td>
+                        <td>@appointment.AppointmentStatus</td>
+                        <td><a href="@Url.Action("Edit", "Appointments", new { id = appointment.AppointmentId })" class="edit-button">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -23,7 +23,10 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-
+        public IActionResult Maintenance()
+        {
+            return View();
+        }
         public IActionResult SignUpUser()
         {
             return View();
@@ -55,17 +58,19 @@ namespace ClinicManagementSystem.Controllers
             return View();
         }
 
-        public IActionResult AdminPortal()
+        public ActionResult AdminPortal()
         {
+           
             return View();
         }
-       
+
+
         //public IActionResult BookAppointmentInput()
         //{
         //    return View();
         //}
 
-        
+
         public IActionResult Privacy()
         {
             return View();
