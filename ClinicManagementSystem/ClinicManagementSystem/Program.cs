@@ -19,6 +19,7 @@ builder.Services.AddScoped<IPatientAppointmentDetails,PatientAppointmentDetailsR
 builder.Services.AddScoped<IEditPatientDetailsRepository, EditPatientDetailsRepository>();
 builder.Services.AddScoped<IEditDoctorDetailsRepository, EditDoctorDetailsRepository>();
 builder.Services.AddScoped<IAppointmentRepository,AppointmentRepository>();
+builder.Services.AddScoped<IEditAppointmentDetailsRepository,EditAppointmentDetailsRepository>();
 
 
 var app = builder.Build();

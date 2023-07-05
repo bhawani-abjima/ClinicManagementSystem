@@ -27,10 +27,7 @@ namespace ClinicManagementSystem.Controllers
         {
             return View();
         }
-        public IActionResult SignUpUser()
-        {
-            return View();
-        }
+
         public IActionResult LoginUser()
         {
             return View();
@@ -58,7 +55,7 @@ namespace ClinicManagementSystem.Controllers
             return View();
         }
 
-        public ActionResult AdminPortal()
+        public IActionResult AdminPortal()
         {
            
             return View();

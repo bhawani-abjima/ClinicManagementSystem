@@ -5,7 +5,7 @@ namespace ClinicManagementSystem.Contracts
     public interface IEditAppointmentDetailsRepository
     {
 
-        Appointment AppointmentEditPortal(string doctorEmail);
+        Appointment AppointmentEditPortal(int id);
         void UpdateAppointmentDetails(Appointment AppointmentUpdate);
     }
 }

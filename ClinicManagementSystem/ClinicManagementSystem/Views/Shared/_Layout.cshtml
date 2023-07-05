@@ -12,12 +12,30 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ClinicManagementSystem.styles.css" asp-append-version="true" />
 
-   
+   <style>
+        .custom-class {
+            
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            padding-top: 5px;
+            margin-top: 20px;
+           
+            border-radius: 3px;
+            position: fixed;
+            bottom: 3%;
+            width: 55%;
+            height: 5%;
+            left:18%;
+           
+            
+        }
+    </style>
   
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light navbar-nav-scroll fixed-top" style="background: linear-gradient(to right, #6600cc 0%, #cc99ff 100%); height:7%">
+        <nav class="navbar navbar-expand-sm navbar-light navbar-nav-scroll fixed-top" style="background-color:lightgrey;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); height:7%;">
      
 
         <div class="container-fluid">
@@ -54,7 +72,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LoginUser"><button type="button" class="btn btn-light">Login</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SignUpUser"><button type="button" class="btn btn-light">Sign Up</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignUpUser"><button type="button" class="btn btn-light">Sign Up</button></a>
                         </li>
                         
                     </ul>
@@ -70,15 +88,22 @@
            
         </main>
     </div>
-    <footer class="border-top footer" style="position: fixed; bottom: 0; width: 100%; height: 10%; background:linear-gradient(to left, #6600cc 0%, #cc99ff 100%);height:7%">
+    <footer class="border-top footer" style="position: fixed; bottom: 0; width: 100%; height: 7%;background-color:lightgrey; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);">
         <div class="container d-flex justify-content-between align-items-center h-100">
             <div>
                 <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
                 <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="Review">Review</a>
             </div>
-
+            <div class="custom-class">
+                <marquee>
+                    In India, from 3 January 2020 to 3:20pm CEST, 14 June 2023, there have been 4,49,92,960 confirmed cases of COVID-19
+                    with 5,31,892 deaths, reported to WHO. As of 29 May 2023, a total of 2,20,67,10,296 vaccine doses have been administered.
+                    Globally, as of 3:20pm CEST, 14 June 2023, there have been 76,79,84,989 confirmed cases of COVID-19, including 69,43,390 deaths,
+                    reported to WHO. As of 12 June 2023, a total of 13,39,73,34,282 vaccine doses have been administered.
+                </marquee>
+            </div>
             <div class="text-center">
-                &copy; @DateTime.Now.Year - ClinicManagementSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy"class="btn btn-light btn-sm">Privacy</a>
+                &copy; @DateTime.Now.Year - Abjima IT Consulting - <a asp-area="" asp-controller="Home" asp-action="Privacy"class="btn btn-light btn-sm">Privacy</a>
             </div>
         </div>
     </footer>

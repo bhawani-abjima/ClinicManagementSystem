@@ -7,7 +7,7 @@
 <style>
     .card-container {
         width: 100%;
-        background-color: lightgrey;
+        background-color: deepskyblue;
         margin: auto;
         padding: 20px;
         text-align: center;
@@ -51,7 +51,10 @@
 </style>
 
 <div class="card-container">
-    <h1>Appointments</h1>
+    <div class="card" style="margin-bottom:5px; border-radius:10px;">
+        <h1>Appointments</h1>
+    </div>
+   
 
     <div class="column-card">
         <table class="appointment-table">
@@ -76,8 +79,13 @@
                         <td>@appointment.AppointmentTime</td>
                         <td>@appointment.PatientEmail</td>
                         <td>@appointment.AppointmentStatus</td>
-                        <td><a href="@Url.Action("Edit", "Appointments", new { id = appointment.AppointmentId })" class="edit-button">Edit</a></td>
-                    </tr>
+                        <td>
+                            <button class="btn btn-outline-secondary btn-lg" onclick="location.href='@Url.Action("AppointmentDetailsEditOption", "EditAppointmentDetails", new { id = appointment.AppointmentId })'" class="edit-button">
+                                <b>Edit</b>
+                            </button>
+                        </td>
+
+                     </tr>
                 }
             </tbody>
         </table>

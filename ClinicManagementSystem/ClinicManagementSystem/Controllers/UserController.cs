@@ -17,8 +17,13 @@ namespace ClinicManagementSystem.Controllers
             _userRepository = userRepository;
         }
 
-        
 
+        public IActionResult SignUpUser()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public async Task<IActionResult> SignUpUser(UserModel user)
         {
             if (ModelState.IsValid)

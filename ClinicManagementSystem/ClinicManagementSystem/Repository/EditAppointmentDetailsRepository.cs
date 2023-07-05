@@ -18,14 +18,14 @@ namespace ClinicManagementSystem.Repository
             _connectionContext = connectionContext;
             
         }
-        public Appointment AppointmentEditPortal(string id)
+        public Appointment AppointmentEditPortal(int id)
         {
             try
             {
                 using (var connection = _connectionContext.CreateConnection())
                 {
                     var appointmentEditData = connection.QueryFirstOrDefault<Appointment>("GetAppointmentById",
-                        new { AppointmentId = id }, commandType: CommandType.StoredProcedure);
+                        new { @Id = id }, commandType: CommandType.StoredProcedure);
 
                     return appointmentEditData;
                 }
@@ -41,6 +41,7 @@ namespace ClinicManagementSystem.Repository
             using(var connection = _connectionContext.CreateConnection())
             {
                 var dynamicParameters = new DynamicParameters();
+                dynamicParameters.Add("@Id",AppointmentUpdate.AppointmentId);
                 dynamicParameters.Add("@DoctorEmail", AppointmentUpdate.DoctorEmail);
                 dynamicParameters.Add("@AppointmentDate", AppointmentUpdate.AppointmentDate);
                 dynamicParameters.Add("@AppointmentTime", AppointmentUpdate.@AppointmentTime);

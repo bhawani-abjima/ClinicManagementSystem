@@ -15,13 +15,13 @@ namespace ClinicManagementSystem.Controllers
         {
             _editAppointmentDetailsRepository = editAppointmentDetailsRepository;
         }
-        [HttpPost]
-        public IActionResult AppointmentDetailsEditOption(string id)
+        [HttpGet]
+        public IActionResult AppointmentDetailsEditOption(int id)
         {
             if (ModelState.IsValid)
             {
                 var editPortalData = _editAppointmentDetailsRepository.AppointmentEditPortal(id);
-                return View("~/Views/Home/EditAppointmentDetails.cshtml", editPortalData);
+                return View("~/Views/EditAppointmentDetails/AppointmentDetailsEditOption.cshtml", editPortalData);
             }
 
             return RedirectToAction("AdminPortal");

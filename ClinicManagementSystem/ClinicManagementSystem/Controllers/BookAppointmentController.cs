@@ -24,6 +24,7 @@ namespace ClinicManagementSystem.Controllers
 
                 if (result == "Appointment Booked Sucessful")
                 {
+                    TempData["AlertMessage"] = "<script>alert('Appointment Booked Successfully!')</script>";
                     return View("~/Views/Home/PatientLoginPortal.cshtml");
 
                 }
