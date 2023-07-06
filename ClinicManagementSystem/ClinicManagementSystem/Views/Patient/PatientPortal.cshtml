@@ -1,0 +1,227 @@
+﻿@model ClinicManagementSystem.Models.PatientModel
+@{
+    ViewData["Title"] = "Doctor Details";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        .form-group label {
+            font-weight: bold;
+            color: black;
+        }
+
+        .form-group {
+            color: blue;
+        }
+
+        .form-head {
+            color: red;
+            font-weight: bold;
+            font-size: 50px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 60%;
+            height: 100%;
+            background-color: powderblue;
+            padding: 15px;
+            border: 2px solid double;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            margin-left: 30%;
+            padding: 15px;
+        }
+
+        .doctor-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 100px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .rightbar {
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: ;
+            padding: 15px;
+            display:block;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .newcard {
+            width:100%;
+            height: 320px;
+           
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        .additional-row {
+            display: flex;
+
+            justify-content: center;
+          
+        
+        }
+
+        .additional-card {
+            width: 200px;
+            height:135px;
+            box-shadow: 0 1px 2px grey;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+            margin-bottom:15px;
+            border-radius:10px;
+        }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Navbar content -->
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="sidebar col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <div class="row">
+                                <div>
+                                    <span class="form-head">@Model.PatientFirstName @Model.PatientLastName</span>
+                                </div>
+                               @* <div class="col-md-4">
+                                    <img src="" class="img" alt="Sample Image">
+                                </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Age:</label>
+                            <span style="display: inline-block;">@Model.Age</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Gender:</label>
+                            <span style="display: inline-block;">@Model.Gender</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Phone No:</label>
+                            <span style="display: inline-block;">@Model.PhoneNo</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Email:</label>
+                            <span style="display: inline-block;">@Model.Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Marital Status:</label>
+                            <span style="display: inline-block;">@Model.MartialStatus</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Date of Birth:</label>
+                            <span style="display: inline-block;">@Model.DateOfBirth</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">City:</label>
+                            <span style="display: inline-block;">@Model.City</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">State:</label>
+                            <span style="display: inline-block;">@Model.State</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Address:</label>
+                            <span style="display: inline-block;">@Model.Address</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Height:</label>
+                            <span style="display: inline-block;">@Model.Height</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Weight:</label>
+                            <span style="display: inline-block;">@Model.Weight</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: inline-block; width: 200px;">Disease Brief:</label>
+                            <span style="display: inline-block;">@Model.DiseaseBrief</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <a asp-action="EditProfile">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="rightbar">
+                <div class="row">
+                    
+                    <div class="additional-row">
+                        <div class="additional-card">
+                            <a href="@Url.Action("PatientAppointments", "Patient", new { Email = Model.Email })">My Appointment</a>
+
+                        </div>
+                        <a href="https://www.apollopharmacy.in/?msclkid=9b979044a6ee1cfb09e8f4d196c615e7&utm_source=bing&utm_medium=cpc&utm_campaign=Apollo_Pharmacy_Non-Brand_RestCities_New&utm_term=buy%20medicine%20online%20in%20india&utm_content=Medicine%20Online%20EM" class="additional-card">
+                            Buy Medicine
+                        </a>
+
+                        <a href="https://deepai.org/chat" class="additional-card">
+                            Chat With US
+                        </a>
+                    </div>
+                </div>
+                @*<a href="https://www.bing.com/ck/a?!&&p=c28eec998d8afb28JmltdHM9MTY4NzM5MjAwMCZpZ3VpZD0zZWQwOTMyNC1hMWUyLTY2MmYtMjZjMC04MWZlYTAxMDY3Y2EmaW5zaWQ9NTI0Nw&ptn=3&hsh=3&fclid=3ed09324-a1e2-662f-26c0-81fea01067ca&psq=youtube+healthy+lifestyle&u=a1aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1ZTnN1bmVHQnNNWQ&ntb=1">
+                <div>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/YNsuneGBsMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+*@
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>

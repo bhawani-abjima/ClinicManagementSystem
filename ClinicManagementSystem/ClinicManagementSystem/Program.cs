@@ -7,19 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<ConnectionContext>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<ILoginRepository, LoginRepository>();
-builder.Services.AddScoped<IPatientRegistrationRepository, PatientRegistrationRepository>();
-builder.Services.AddScoped<IPatientPortalRepository,PatientPortalRepository>();
-builder.Services.AddScoped<IDoctorRegistrationRepository,DoctorRegistrationRepository>();
-builder.Services.AddScoped<IDoctorPortalRepository,DoctorPortalRepository>();
-builder.Services.AddScoped<IAvailableDoctorDetailsRepository,AvailableDoctorDetailsRepository>();
-builder.Services.AddScoped<IBookAppointmentRepository, BookAppointmentRepository>();
-builder.Services.AddScoped<IPatientAppointmentDetails,PatientAppointmentDetailsRepository>();
-builder.Services.AddScoped<IEditPatientDetailsRepository, EditPatientDetailsRepository>();
-builder.Services.AddScoped<IEditDoctorDetailsRepository, EditDoctorDetailsRepository>();
-builder.Services.AddScoped<IAppointmentRepository,AppointmentRepository>();
-builder.Services.AddScoped<IEditAppointmentDetailsRepository,EditAppointmentDetailsRepository>();
+builder.Services.AddScoped<IUser, UserRepo>();
+builder.Services.AddScoped<ILogin, LoginRepo>();
+builder.Services.AddScoped<IPatient, PatientRepo>();
+builder.Services.AddScoped<IDoctor,DoctorRepo>();
+builder.Services.AddScoped<IAppointment, AppointmentRepo>();
+builder.Services.AddScoped<IAvailableDoctor, AvailableDoctorRepo>();
+
 
 
 var app = builder.Build();

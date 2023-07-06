@@ -11,9 +11,9 @@ namespace ClinicManagementSystem.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ILoginRepository _loginRepository;
+        private readonly ILogin _loginRepository;
         
-        public HomeController(ILogger<HomeController> logger, ILoginRepository loginRepository)
+        public HomeController(ILogger<HomeController> logger, ILogin loginRepository)
         {
             _logger = logger;
             _loginRepository = loginRepository;
@@ -34,11 +34,11 @@ namespace ClinicManagementSystem.Controllers
         }
         public IActionResult PatientRegistration()
         {
-            return View();
+            return View("~/Views/Patient/PatientRegistration.cshtml");
         }
         public IActionResult PatientLoginPortal()
         {
-            return View();
+            return View("~/Views/Patient/PatientLoginPortal.cshtml");
         }
         public IActionResult EditPatientDetails()
         {
@@ -48,11 +48,11 @@ namespace ClinicManagementSystem.Controllers
 
         public IActionResult DoctorLoginPortal()
         {
-            return View();
+            return View("~/Views/Doctor/DoctorLoginPortal.cshtml");
         }
         public IActionResult DoctorRegistration()
         {
-            return View();
+            return View("~/Views/Doctor/DoctorRegistration.cshtml");
         }
 
         public IActionResult AdminPortal()

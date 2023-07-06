@@ -20,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEdldEFsbEFwcG9pbnRtZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/AvailableDoctor/AvailableDoctorDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXZhaWxhYmxlRG9jdG9yXEF2YWlsYWJsZURvY3RvckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Doctor/DoctorLoginPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERvY3RvckxvZ2luUG9ydGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Doctor/DoctorPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERvY3RvclBvcnRhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Doctor/DoctorRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXERvY3RvclJlZ2lzdHJhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Doctor/EditDoctorDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXEVkaXREb2N0b3JEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/EditAppointmentDetails/AppointmentDetailsEditOption.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdEFwcG9pbnRtZW50RGV0YWlsc1xBcHBvaW50bWVudERldGFpbHNFZGl0T3B0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,60 +48,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBvcnRhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/AvailableDoctorDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBdmFpbGFibGVEb2N0b3JEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorLoginPortal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JMb2dpblBvcnRhbC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorPortal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JQb3J0YWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/DoctorRegistration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEb2N0b3JSZWdpc3RyYXRpb24uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/EditDoctorDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0RG9jdG9yRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/EditPatientDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0UGF0aWVudERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/LoginUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpblVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Maintenance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNYWludGVuYW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientAppointmentDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50QXBwb2ludG1lbnREZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientLoginPortal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50TG9naW5Qb3J0YWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientPortal.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50UG9ydGFsLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/PatientRegistration.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXRpZW50UmVnaXN0cmF0aW9uLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Login/LoginUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5Vc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/EditPatientDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxFZGl0UGF0aWVudERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientAppointmentDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50QXBwb2ludG1lbnREZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientLoginPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50TG9naW5Qb3J0YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientPortal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50UG9ydGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientRegistration.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50UmVnaXN0cmF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Shared/Error.cshtml]
