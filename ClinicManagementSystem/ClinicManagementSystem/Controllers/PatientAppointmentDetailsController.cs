@@ -26,7 +26,7 @@ namespace ClinicManagementSystem.Controllers
             }
             catch (Exception)
             {
-                // Handle the exception or log the error
+            
                 return RedirectToAction("Index");
             }
         }
