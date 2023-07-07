@@ -31,7 +31,7 @@ namespace ClinicManagementSystem.Repository
                 using (var _connectionString = _connectionContext.CreateConnection())
                 {
                     var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@DoctorEmail", appointmentCredentials.DoctorEmail);
+                    dynamicParameters.Add("@DoctorName", appointmentCredentials.DoctorName);
                     dynamicParameters.Add("@AppointmentDate", appointmentCredentials.AppointmentDate);
                     dynamicParameters.Add("@AppointmentTime", appointmentCredentials.AppointmentTime);
                     dynamicParameters.Add("@PatientEmail", appointmentCredentials.PatientEmail);
@@ -83,7 +83,7 @@ namespace ClinicManagementSystem.Repository
             {
                 var dynamicParameters = new DynamicParameters();
                 dynamicParameters.Add("@Id", AppointmentUpdate.AppointmentId);
-                dynamicParameters.Add("@DoctorEmail", AppointmentUpdate.DoctorEmail);
+                dynamicParameters.Add("@DoctorName", AppointmentUpdate.DoctorName);
                 dynamicParameters.Add("@AppointmentDate", AppointmentUpdate.AppointmentDate);
                 dynamicParameters.Add("@AppointmentTime", AppointmentUpdate.@AppointmentTime);
                 dynamicParameters.Add("@PatientEmail", AppointmentUpdate.PatientEmail);

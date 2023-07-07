@@ -21,10 +21,10 @@ namespace ClinicManagementSystem.Repository
                 using (var _connectionString = _connectionContext.CreateConnection())
                 {
                     var dynamicParameters = new DynamicParameters();
-                    dynamicParameters.Add("@L_UserName", loginCredentials.L_UserName);
-                    dynamicParameters.Add("@L_Password", loginCredentials.L_Password);
-                    dynamicParameters.Add("@L_UserEmail", loginCredentials.L_UserEmail);
-                    dynamicParameters.Add("@L_UserType", loginCredentials.L_UserType);
+                    dynamicParameters.Add("@L_UserName", loginCredentials.UserName);
+                    dynamicParameters.Add("@L_Password", loginCredentials.Password);
+                    dynamicParameters.Add("@L_UserEmail", loginCredentials.UserEmail);
+                    dynamicParameters.Add("@L_UserType", loginCredentials.UserType);
                     dynamicParameters.Add("@L_LoginSuccess", DbType.Int32, direction: ParameterDirection.Output);
 
                     await _connectionString.ExecuteAsync("sp_Login_User", dynamicParameters, commandType: CommandType.StoredProcedure);

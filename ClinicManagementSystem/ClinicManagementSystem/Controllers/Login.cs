@@ -29,10 +29,10 @@ namespace ClinicManagementSystem.Controllers
 
                 if (result == "Login Sucessful ")
                 {
-                    string usertype = loginCredentials.L_UserType;
+                    string usertype = loginCredentials.UserType;
                     if (usertype == "Patient")
                     {
-                        
+                        TempData["SuccessMessage"] = "Login Successful";
                         return RedirectToAction("PatientLoginPortal","Home");
                     }
                     else if (usertype == "Doctor")

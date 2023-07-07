@@ -1,46 +1,41 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Patient</title>
 
-@model ClinicManagementSystem.Models.PatientPortalModel
+    
 
-@*@{
-    ViewBag.Title = "Login Patient";
-
-}*@
-
-
-
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        @using (Html.BeginForm("PatientLoginPortal", "Patient", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title"><b>Login</b></div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.PatientEmail,"PatientEmail")
-                        @Html.TextBoxFor(m => m.PatientEmail, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.PatientEmail, "", new { @class = "text-danger" })
+</head>
+<body>
+    @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
+    {
+        <script>
+            window.onload = function () {
+                alert("@TempData["SuccessMessage"]");
+            };
+        </script>
+    }
+    <div class="row justify-content-md-center">
+        <div class="col-md-5">
+            <form action="/Patient/PatientLoginPortal" method="post">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><b>Login</b></div>
                     </div>
-                    @* <div class="form-group">
-                @Html.LabelFor(m => m.PatientPhoneNo,"PatientPhoneNo")
-                @Html.TextBoxFor(m => m.PatientPhoneNo, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => m.PatientPhoneNo, "", new { @class = "text-danger" })
-                </div>*@
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="PatientEmail">Patient Email</label>
+                            <input type="email" name="PatientEmail" id="PatientEmail" class="form-control" required />
+                            <span class="text-danger"></span>
+                        </div>
 
-
-                    <div class="d-grid gap-2 col-4 mx-auto">
-                        <input type="submit" name="Profile" class="btn btn-danger" value="PatientProfile" />
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <input type="submit" name="Profile" class="btn btn-danger" value="PatientProfile" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
+            </form>
+        </div>
     </div>
-</div>
+</body>
+</html>

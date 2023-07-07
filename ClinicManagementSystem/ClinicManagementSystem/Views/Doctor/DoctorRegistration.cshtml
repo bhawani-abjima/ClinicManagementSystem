@@ -1,10 +1,9 @@
 ﻿@model ClinicManagementSystem.Models.DoctorModel
 
-
 <div class="container">
     <div class="center justify-content-start" style="margin-left: auto; margin-right: auto;">
         <div class="col-md-6">
-            <div class="card  text-white" style="background-color: white;">
+            <div class="card text-white" style="background-color: white;">
                 <div class="card-header">
                     <div class="card-title" style="font-weight:bold; font-size:30px; color:black"><b>Doctor Registration</b></div>
                 </div>
@@ -17,34 +16,25 @@
                                     <label asp-for="RegistrationNo" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="RegistrationNo" class="form-control" />
+                                    <input asp-for="RegistrationNo" class="form-control" required />
                                     <span asp-validation-for="RegistrationNo" class="text-danger"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td style="background-color: ghostwhite; font-weight:bold;">
-                                    <label asp-for="DoctorFirstName" class="control-label"></label>
+                                    <label asp-for="DoctorName" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="DoctorFirstName" class="form-control" />
-                                    <span asp-validation-for="DoctorFirstName" class="text-danger"></span>
+                                    <input asp-for="DoctorName" class="form-control" required />
+                                    <span asp-validation-for="DoctorName" class="text-danger"></span>
                                 </td>
                             </tr>
-                            <tr>
-                                <td style="background-color: ghostwhite;font-weight:bold;">
-                                    <label asp-for="DoctorLastName" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="DoctorLastName" class="form-control" />
-                                    <span asp-validation-for="DoctorLastName" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
+                         
                                 <td style="background-color: ghostwhite;font-weight:bold;">
                                     <label asp-for="Email" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="Email" class="form-control" />
+                                    <input asp-for="Email" class="form-control" required />
                                     <span asp-validation-for="Email" class="text-danger"></span>
                                 </td>
                             </tr>
@@ -53,7 +43,7 @@
                                     <label asp-for="Specialities" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="Specialities" class="form-control" />
+                                    <input asp-for="Specialities" class="form-control" required />
                                     <span asp-validation-for="Specialities" class="text-danger"></span>
                                 </td>
                             </tr>
@@ -62,7 +52,7 @@
                                     <label asp-for="Experience" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="Experience" class="form-control" />
+                                    <input asp-for="Experience" class="form-control" required />
                                     <span asp-validation-for="Experience" class="text-danger"></span>
                                 </td>
                             </tr>
@@ -71,7 +61,7 @@
                                     <label asp-for="Education" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="Education" class="form-control" />
+                                    <input asp-for="Education" class="form-control" required />
                                     <span asp-validation-for="Education" class="text-danger"></span>
                                 </td>
                             </tr>
@@ -80,7 +70,7 @@
                                     <label asp-for="Fees" class="control-label"></label>
                                 </td>
                                 <td>
-                                    <input asp-for="Fees" class="form-control" />
+                                    <input asp-for="Fees" class="form-control" required />
                                     <span asp-validation-for="Fees" class="text-danger"></span>
                                 </td>
                             </tr>
@@ -88,10 +78,8 @@
                         <div class="form-group text-center">
                             <input type="submit" value="Submit" class="btn btn-light" style="width: 300px; background-color:lightgreen" />
                         </div>
-
                     </form>
                 </div>
-
             </div>
         </div>
     </div>

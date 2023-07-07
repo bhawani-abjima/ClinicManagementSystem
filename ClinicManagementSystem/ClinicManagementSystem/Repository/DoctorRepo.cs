@@ -49,8 +49,8 @@ namespace ClinicManagementSystem.Repository
 
                     var dynamicParameters = new DynamicParameters();
                     dynamicParameters.Add("@RegistrationNo", doctorCredentials.RegistrationNo);
-                    dynamicParameters.Add("@DoctorFirstName", doctorCredentials.DoctorFirstName);
-                    dynamicParameters.Add("@DoctorLastName", doctorCredentials.DoctorLastName);
+                    dynamicParameters.Add("@DoctorFirstName", doctorCredentials.DoctorName);
+              
                     dynamicParameters.Add("@Email", doctorCredentials.Email);
                     dynamicParameters.Add("@Specialities", doctorCredentials.Specialities);
                     dynamicParameters.Add("@Experience", doctorCredentials.Experience);
@@ -105,8 +105,8 @@ namespace ClinicManagementSystem.Repository
                 var dynamicParameters = new DynamicParameters();
 
                 dynamicParameters.Add("@RegistrationNo", doctorUpdate.RegistrationNo);
-                dynamicParameters.Add("@DoctorFirstName", doctorUpdate.DoctorFirstName);
-                dynamicParameters.Add("@DoctorLastName", doctorUpdate.DoctorLastName);
+                dynamicParameters.Add("@DoctorName", doctorUpdate.DoctorName);
+             
                 dynamicParameters.Add("@Email", doctorUpdate.Email);
                 dynamicParameters.Add("@Specialities", doctorUpdate.Specialities);
                 dynamicParameters.Add("@Experience", doctorUpdate.Experience);

@@ -1,89 +1,98 @@
 ﻿@model ClinicManagementSystem.Models.LoginModel
 
 @{
-    ViewBag.Title = "Login User";
+    ViewData["Title"] = "LoginUser";
 }
 
 <style>
+    body {
+       
+        background-image: url('https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg?w=1060&t=st=1688706348~exp=1688706948~hmac=62fdc45d9a61016854d45eb1f17e65959102b1a575f6f2c7fa3f12dcd21f30ed');
+    }
 
     .card {
-        width: 70%;
-        text-align: left;
-        border-radius: 45px;
-        box-shadow: 0 2px 5px black;
-        margin: 40px auto;
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 400px;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        padding: 20px;
     }
 
     .card-title {
-        color: black;
-        border-radius: 45px;
-        padding: 10px 40px;
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 10px;
         text-align: center;
     }
 
-    .login-button {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        border: none;
+
+    .btn-primary {
+        display: block;
+        margin: 20px auto 0;
+        width: 50%;
+        height: 35px;
+        background: linear-gradient(to bottom, deepskyblue, white);
+        padding-top: 0px;
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
     }
 
-        .login-button input[type="submit"] {
-            background: linear-gradient(to left, #ff3399 0%, #ff9933 100%);
-            padding: 7px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 10px;
-        }
+
 
 </style>
 
 
 
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        @using (Html.BeginForm("LoginUser", "Login", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
 
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">Login Portal</div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.L_UserName, "UserName")
-                        @Html.TextBoxFor(m => m.L_UserName, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.L_UserName, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.L_UserEmail, "UserEmail")
-                        @Html.TextBoxFor(m => m.L_UserEmail, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.L_UserEmail, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.L_Password, "Password")
-                        @Html.PasswordFor(m => m.L_Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.L_Password, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.L_UserType, "UserType")
-                        @Html.DropDownListFor(m => m.L_UserType, new SelectList(new[]
-                    {
-                    new SelectListItem { Text = "Patient", Value = "Patient" },
-                    new SelectListItem { Text = "Doctor", Value = "Doctor" },
-                    new SelectListItem { Text = "Admin", Value = "Admin" }
-                    }, "Value", "Text"), "Select User Type", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.L_UserType, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="login-button">
-                        <input type="submit" name="Login" value="LoginUser" />
-                    </div>
-                </div>
-            </div>
-        }
+
+<div class="card">
+    <div class="card-title text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/3293/3293466.png" style="width: 100px; height: 100px;" />
     </div>
+
+    <form asp-action="LoginUser">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="UserName" class="control-label"></label>
+            <input asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UserEmail" class="control-label"></label>
+            <input asp-for="UserEmail" class="form-control" />
+            <span asp-validation-for="UserEmail" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="control-label"></label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UserType" class="control-label"></label>
+            <select asp-for="UserType" class="form-control">
+                <option value="">Select User Type</option>
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <span asp-validation-for="UserType" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Login" class="btn btn-primary" />
+        </div>
+    </form>
 </div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

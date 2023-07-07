@@ -1,95 +1,89 @@
 ﻿@model ClinicManagementSystem.Models.UserModel
 
 @{
-    ViewBag.Title = "Sign Up New User";
+    ViewData["Title"] = "SignUpUser";
 }
 
+
 <style>
+    body {
+        background-image: url('https://img.freepik.com/free-photo/flat-lay-health-still-life-arrangement-with-copy-space_23-2148854064.jpg?w=1060&t=st=1688730424~exp=1688731024~hmac=51f5eae56784b9d96ce0f45c55d58c33ff921842a5cc71560c5a128c2c59c8f9https://img.freepik.com/free-vector/modern-medical-background_1035-8989.jpg?w=740&t=st=1688730631~exp=1688731231~hmac=b47f8faecdb57d8fb4959bd9fc87952a00a5a1d5c5c3b2a46439ad214d8a5bbb');
+    }
+
     .card {
-        width: 70%;
-        text-align: left;
-        border-radius: 45px;
-        box-shadow: 0 2px 5px black;
-        margin: 40px auto;
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 400px;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.25rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        padding: 20px;
     }
 
     .card-title {
-        color: black;
-        border-radius: 45px;
-        padding: 10px 40px;
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 10px;
         text-align: center;
     }
 
-    .signup-button {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        border: none;
+    .btn-primary {
+        display: block;
+        margin: 20px auto 0;
+        width: 50%;
+        height: 35px;
+        background: linear-gradient(to bottom, deepskyblue, white);
+       
+        padding-top:0px;
+        font-size:20px;
+        color: black;
+        font-weight: bold;
     }
 
-        .signup-button input[type="submit"] {
-            background: linear-gradient(to left, #ff3399 0%, #ff9933 100%);
-            padding: 7px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 10px;
-        }
+
 </style>
 
-<script>
-    function showAlert() {
-        alert("Registration Successful! Please Log in");
-    }
-</script>
 
-<div class="row justify-content-md-center">
-    <div class="col-md-5">
-        @using (Html.BeginForm("SignUpUser", "User", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title"><b>Sign Up</b></div>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.UserName)
-                        @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @placeholder = "UserName" })
-                        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.UserEmail)
-                        @Html.TextBoxFor(m => m.UserEmail, "", new { @class = "form-control", @placeholder = "UserEmail" })
-                        @Html.ValidationMessageFor(m => m.UserEmail, "", new { @class = "badge badge-danger" })
-                        @if (ViewBag.error != null)
-                        {
-                            <span class="badge badge-danger">@ViewBag.error</span>
-                        }
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password)
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.UserType)
-                        @Html.DropDownListFor(m => m.UserType, new SelectList(new[]
-                    {
-                    new SelectListItem { Text = "Patient", Value = "Patient" },
-                    new SelectListItem { Text = "Doctor", Value = "Doctor" },
-                    new SelectListItem { Text = "Admin", Value = "Admin" }
-                    }, "Value", "Text"), "Select User Type", new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.UserType, "", new { @class = "badge badge-danger" })
-                    </div>
-                    <div class="signup-button">
-                        <input type="submit" name="SignUp" class="btn btn-danger" value="SignUpUser" onclick="showAlert()" />
-                    </div>
-                </div>
-            </div>
-        }
+<div class="card">
+    <div class="card-title text-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png" style="width: 100px; height: 100px;" />
     </div>
-</div>
+
+         <form asp-action="SignUpUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        <div class="form-group">
+            <label asp-for="UserEmail" class="control-label"></label>
+            <input asp-for="UserEmail" class="form-control" />
+            <span asp-validation-for="UserEmail" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+        <div class="form-group">
+            <label asp-for="UserType" class="control-label"></label>
+            <select asp-for="UserType" class="form-control">
+                <option value="">Select User Type</option>
+                <option value="Patient">Patient</option>
+                <option value="Doctor">Doctor</option>
+              
+            </select>
+            <span asp-validation-for="UserType" class="text-danger"></span>
+        </div>
+            <div class="form-group">
+                <input type="submit" value="Sign Up" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

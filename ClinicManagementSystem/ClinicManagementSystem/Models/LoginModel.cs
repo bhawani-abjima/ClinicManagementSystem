@@ -5,9 +5,9 @@ namespace ClinicManagementSystem.Models
     public class LoginModel
     {
        
-        public string L_UserName { get; set; }
-        public string L_UserEmail { get; set; }
-        public string L_Password { get; set; }
-        public string L_UserType { get; set; }
+        public string UserName { get; set; }
+        public string UserEmail { get; set; }
+        public string Password { get; set; }
+        public string UserType { get; set; }
     }
 }

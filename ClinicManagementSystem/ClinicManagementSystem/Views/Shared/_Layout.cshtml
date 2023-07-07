@@ -35,7 +35,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light navbar-nav-scroll fixed-top" style="background-color:lightgrey;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); height:7%;">
+        <nav class="navbar navbar-expand-sm navbar-light fixed-top">
      
 
         <div class="container-fluid">
@@ -47,32 +47,32 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-light btn-sm">Home</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><button type="button" class="btn btn-dark">Home</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HealthInformation"><button type="button" class="btn btn-light btn-sm">Health Information</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="HealthInformation"><button type="button" class="btn btn-outline-dark">Health Information</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Career"><button type="button" class="btn btn-light btn-sm">Career</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Career"><button type="button" class="btn btn-outline-dark">Career</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services"><button type="button" class="btn btn-light btn-sm">Our Services</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Services"><button type="button" class="btn btn-outline-dark">Our Services</button></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="AvailableDoctor" asp-action="AvailableDoctorList">
-                                <button type="submit" class="btn btn-light">Book Appointment</button>
+                                <button type="submit" class="btn btn-dark">Book Appointment</button>
                             </a>
 
 
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="LoginUser"><button type="button" class="btn btn-light">Login</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="LoginUser"><button type="button" class="btn btn-outline-dark">Login</button></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignUpUser"><button type="button" class="btn btn-light">Sign Up</button></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="SignUpUser"><button type="button" class="btn btn-outline-dark">Sign Up</button></a>
                         </li>
                         
                     </ul>
@@ -88,23 +88,23 @@
            
         </main>
     </div>
-    <footer class="border-top footer" style="position: fixed; bottom: 0; width: 100%; height: 7%;background-color:lightgrey; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);">
+    <footer class="border-top footer" style="position: fixed; bottom: 0; width: 100%;">
         <div class="container d-flex justify-content-between align-items-center h-100">
             <div>
-                <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
-                <a class="btn btn-light btn-sm" asp-area="" asp-controller="Home" asp-action="Review">Review </a>
+                <a class="btn btn-outline-dark" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+                <a class="btn btn-outline-dark" asp-area="" asp-controller="Home" asp-action="Review">Review </a>
                 
             </div>
           
-                <marquee>
+               @* <marquee>
                     In India, from 3 January 2020 to 3:20pm CEST, 14 June 2023, there have been 4,49,92,960 confirmed cases of COVID-19
                     with 5,31,892 deaths, reported to WHO. As of 29 May 2023, a total of 2,20,67,10,296 vaccine doses have been administered.
                     Globally, as of 3:20pm CEST, 14 June 2023, there have been 76,79,84,989 confirmed cases of COVID-19, including 69,43,390 deaths,
                     reported to WHO. As of 12 June 2023, a total of 13,39,73,34,282 vaccine doses have been administered.
                 </marquee>
-       
+       *@
             <div class="text-center">
-                || &copy; @DateTime.Now.Year - Abjima IT Consulting - <a asp-area="" asp-controller="Home" asp-action="Privacy"class="btn btn-light btn-sm">Privacy</a>
+                || &copy; @DateTime.Now.Year - Blue Hives Pvt Ltd -
             </div>
         </div>
     </footer>

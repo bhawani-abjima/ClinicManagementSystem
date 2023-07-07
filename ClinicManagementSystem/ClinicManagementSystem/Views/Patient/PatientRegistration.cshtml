@@ -8,6 +8,10 @@
 @{
     ViewData["Title"] = "PatientRegistration";
 }
+
+
+
+
 <style>
     .form-container {
         background-color: aliceblue;
@@ -30,16 +34,24 @@
                             <table class="table">
                                 <tr>
                                     <td><label asp-for="PatientFirstName" class="control-label" style="font-weight:bold;"></label></td>
-                                    <td><input asp-for="PatientFirstName" class="form-control" /></td>
+                                    <td><input asp-for="PatientFirstName" class="form-control" required /></td>
                                     <td><span asp-validation-for="PatientFirstName" class="text-danger"></span></td>
                                     <td><label asp-for="PatientLastName" class="control-label" style="font-weight:bold;"></label></td>
-                                    <td><input asp-for="PatientLastName" class="form-control" /></td>
+                                    <td><input asp-for="PatientLastName" class="form-control" required /></td>
                                     <td><span asp-validation-for="PatientLastName" class="text-danger"></span></td>
                                 </tr>
                                 <tr>
                                     <td><label asp-for="Age" class="control-label" style="font-weight:bold;"></label></td>
-                                    <td><input asp-for="Age" class="form-control" /></td>
+                                    <td>
+                                        <select asp-for="Age" class="form-control" required>
+                                            @for (int i = 1; i <= 110; i++)
+                                            {
+                                                <option value="@i">@i</option>
+                                            }
+                                        </select>
+                                    </td>
                                     <td><span asp-validation-for="Age" class="text-danger"></span></td>
+
                                     <td><label asp-for="Gender" class="control-label" style="font-weight:bold;"></label></td>
                                     <td>
                                         <select asp-for="Gender" class="form-control">
@@ -53,10 +65,13 @@
                                 </tr>
                                 <tr>
                                     <td><label asp-for="PhoneNo" class="control-label" style="font-weight:bold;"></label></td>
-                                    <td><input asp-for="PhoneNo" class="form-control" /></td>
+                                    <td>
+                                        <input asp-for="PhoneNo" class="form-control" required pattern="[0-9]" />
+                                    </td>
                                     <td><span asp-validation-for="PhoneNo" class="text-danger"></span></td>
+
                                     <td><label asp-for="Email" class="control-label" style="font-weight:bold;"></label></td>
-                                    <td><input asp-for="Email" class="form-control" /></td>
+                                    <td><input asp-for="Email" class="form-control" required /></td>
                                     <td><span asp-validation-for="Email" class="text-danger"></span></td>
                                 </tr>
                                 <tr>
@@ -64,17 +79,22 @@
                                     <td>
                                         <select asp-for="MartialStatus" class="form-control">
                                             <option value="">Select Martial Status</option>
+                                            <option value="Single">Single</option>
                                             <option value="Married">Married</option>
                                             <option value="Widowed">Widowed</option>
                                             <option value="Separated">Separated</option>
                                             <option value="Divorced">Divorced</option>
-                                            <option value="Single">Single</option>
+
                                         </select>
                                     </td>
                                     <td><span asp-validation-for="MartialStatus" class="text-danger"></span></td>
+
                                     <td><label asp-for="DateOfBirth" class="control-label" style="font-weight:bold;">Date of Birth</label></td>
-                                    <td><input type="date" asp-for="DateOfBirth" class="form-control" /></td>
+                                    <td><input type="date" asp-for="DateOfBirth" class="form-control" data-val-date="The field Date of Birth must be in the format dd/mm/yyyy."/></td>
                                     <td><span asp-validation-for="DateOfBirth" class="text-danger"></span></td>
+
+                                   
+
                                 </tr>
                                 <tr>
                                     <td><label asp-for="City" class="control-label" style="font-weight:bold;"></label></td>
@@ -113,7 +133,7 @@
                                 <tr>
                                     <td><label for="Address" class="control-label" style="font-weight:bold;">Address</label></td>
                                     <td colspan="5">
-                                        <input type="text" id="Address" name="Address" class="form-control" />
+                                        <input type="text" id="Address" name="Address" class="form-control" required />
                                         <span class="text-danger"></span>
                                         <div class="text-muted">
                                             Provide full address with House No Landmark.
@@ -121,38 +141,37 @@
                                     </td>
                                 </tr>
 
-                                <td><label asp-for="Height" class="control-label" style="font-weight:bold;"></label></td>
+                                <td>
+                                    <label asp-for="Height" class="control-label" style="font-weight:bold;"></label>
+                                </td>
                                 <td>
                                     <select asp-for="Height" class="form-control">
                                         <option value="">Select Height</option>
-                                        @for (int feet = 3; feet <= 7; feet++)
+                                        @for (int centimeters = 30; centimeters <= 300; centimeters++)
                                         {
-                                            for (int inches = 0; inches <= 11; inches++)
-                                            {
-                                                int totalInches = (feet * 12) + inches;
-                                                int centimeters = (int)(totalInches * 2.54);
-                                                <option value="@totalInches">@(feet) ft @(inches) in / @(centimeters) cm</option>
-                                            }
+                                            <option value="@centimeters.ToString() cm">@centimeters cm</option>
                                         }
                                     </select>
                                 </td>
                                 <td><span asp-validation-for="Height" class="text-danger"></span></td>
-                                <td><label asp-for="Weight" class="control-label" style="font-weight:bold;"></label></td>
+                                <td>
+                                    <label asp-for="Weight" class="control-label" style="font-weight:bold;"></label>
+                                </td>
                                 <td>
                                     <select asp-for="Weight" class="form-control">
                                         <option value="">Select Weight</option>
                                         @for (int weight = 1; weight <= 100; weight++)
                                         {
-                                            <option value="@weight">@weight kg </option>
+                                            <option value="@weight.ToString() kg">@weight kg</option>
                                         }
                                     </select>
                                 </td>
-                                <td><span asp-validation-for="Weight" class="text-danger"></span></td>
-                                </tr>
+
+
                                 <tr>
                                     <td><label asp-for="DiseaseBrief" class="control-label" style="font-weight:bold;"></label></td>
                                     <td colspan="5">
-                                        <textarea asp-for="DiseaseBrief" class="form-control"></textarea>
+                                        <textarea asp-for="DiseaseBrief" class="form-control" required></textarea>
                                         <span asp-validation-for="DiseaseBrief" class="text-danger"></span>
                                         <div class="text-muted">
                                             Provide a brief description of the disease or condition. Also provide disease history.
@@ -174,3 +193,4 @@
 
     </div>
 
+   
