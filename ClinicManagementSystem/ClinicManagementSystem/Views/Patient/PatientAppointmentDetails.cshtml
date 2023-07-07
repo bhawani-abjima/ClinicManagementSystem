@@ -1,33 +1,26 @@
-﻿@model List<ClinicManagementSystem.Models.BookAppointment>
+﻿<style>
+    .appointment-table {
+        width: 100%;
+        table-layout: fixed;
+    }
 
-@{
-    ViewData["Title"] = "Appointment Details";
-}
-<head>
-    <style>
-        .appointment-card {
-            background-color: honeydew;
-            border: 1px solid #dee2e6;
-            margin-bottom: 20px;
+        .appointment-table th,final
+        .appointment-table td {
+            padding: 8px;
+            text-align: left;
         }
 
-        .appointment-item {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            grid-column-gap: 10px;
-            margin-bottom: 10px;
-        }
+    .active-button {
+        background-color: deepskyblue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
 
-        .appointment-label {
-            font-weight: bold;
-        }
-
-        .appointment-data {
-            word-break: break-all;
-        }
-
-    </style>
-</head>
 <div class="card appointment-card">
     <div class="card-header">
         <h5 class="card-title">Appointment Details</h5>
@@ -35,24 +28,28 @@
     <div class="card-body">
         @if (Model != null && Model.Count > 0)
         {
-            @foreach (var appointment in Model)
-            {
-                <div class="card">
-                    <div class="card-body appointment-item">
-                        <div class="appointment-label">Doctor Name:</div>
-                        <div class="appointment-data">@appointment.DoctorName</div>
-
-                        <div class="appointment-label">Appointment Date:</div>
-                        <div class="appointment-data">@appointment.AppointmentDate.ToShortDateString()</div>
-
-                        <div class="appointment-label">Appointment Time:</div>
-                        <div class="appointment-data">@appointment.AppointmentTime</div>
-
-                        <div class="appointment-label">Patient Email:</div>
-                        <div class="appointment-data">@appointment.PatientEmail</div>
-                    </div>
-                </div>
-            }
+            <table class="appointment-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Doctor Name</th>
+                        <th style="width: 25%;">Appointment Date</th>
+                        <th style="width: 25%;">Appointment Time</th>
+                        <th style="width: 25%;">Appointment Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appointment in Model)
+                    {
+                        <tr>
+                            <td>@appointment.DoctorName</td>
+                            <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                            <td>@appointment.AppointmentTime</td>
+                            <td> <button class="active-button">Active</button></td>
+                           @* <td>@appointment.PatientEmail</td>*@
+                        </tr>
+                    }
+                </tbody>
+            </table>
         }
         else
         {
@@ -60,4 +57,3 @@
         }
     </div>
 </div>
-
