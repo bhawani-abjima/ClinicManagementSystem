@@ -4,7 +4,7 @@ namespace ClinicManagementSystem.Models
 {
     public class DoctorModel
     {
-        //public string DoctorId { get; set; }
+        public string DoctorId { get; set; }
         public string? RegistrationNo { get; set; }
         public string? DoctorName { get; set; }
 

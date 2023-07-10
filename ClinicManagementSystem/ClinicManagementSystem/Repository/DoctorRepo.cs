@@ -16,19 +16,15 @@ namespace ClinicManagementSystem.Repository
 
             _connectionContext = connectionContext;
         }
-      
-        public async Task<DoctorModel> DoctorPortalAsync(string DoctorEmail)
+
+        public async Task<DoctorModel> GetDoctorDataAsync(string RegistrationNo)
         {
             try
             {
                 using (var connection = _connectionContext.CreateConnection())
                 {
-                    //var dynamicParameters = new DynamicParameters();
-                    //dynamicParameters.Add("@DoctorEmail", DoctorEmail);
-
-
-                    var doctorData = await connection.QueryFirstOrDefaultAsync<DoctorModel>("sp_GetDoctorAndAppointmentData",
-                        new { DoctorEmail = DoctorEmail }, commandType: CommandType.StoredProcedure);
+                    var doctorData = await connection.QueryFirstOrDefaultAsync<DoctorModel>("sp_GetDoctorData",
+                        new { RegistrationNo = RegistrationNo }, commandType: CommandType.StoredProcedure);
 
                     return doctorData;
                 }
@@ -38,6 +34,26 @@ namespace ClinicManagementSystem.Repository
                 throw ex;
             }
         }
+
+       
+        public async Task<List<Appointment>> GetDoctorAppointmentsAsync(string RegistrationNo)
+        {
+            try
+            {
+                using (var connection = _connectionContext.CreateConnection())
+                {
+                    var appointmentData = await connection.QueryAsync<Appointment>("sp_GetDoctorAppointments",
+                        new { RegistrationNo = RegistrationNo }, commandType: CommandType.StoredProcedure);
+
+                    return appointmentData.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public async Task<string> DoctorRegisAsync(DoctorModel doctorCredentials)
         {
@@ -117,6 +133,6 @@ namespace ClinicManagementSystem.Repository
             }
         }
 
-        
+      
     }
 }

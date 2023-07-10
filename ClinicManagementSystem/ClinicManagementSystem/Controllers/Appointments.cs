@@ -29,8 +29,8 @@ namespace ClinicManagementSystem.Controllers
 
                 if (result == "Appointment Booked Sucessful")
                 {
-                   
-                    return View("~/Views/Patient/PatientLoginPortal.cshtml");
+                    TempData["Message"] = "Appointment booked successfully.";
+                    return View("~/Views/Login/LoginUser.cshtml");
 
                 }
             }

@@ -13,6 +13,8 @@ namespace ClinicManagementSystem.Models
         public TimeSpan AppointmentTime { get; set; }
         public string PatientEmail { get; set; }
         public string AppointmentStatus { get; set; }
+
+        public string DiseaseBrief { get; set; }
        
     }
 }

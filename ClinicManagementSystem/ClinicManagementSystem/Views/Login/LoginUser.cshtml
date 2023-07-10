@@ -3,13 +3,18 @@
 @{
     ViewData["Title"] = "LoginUser";
 }
+@if (TempData["Message"] != null)
+{
+    <script>
+        
+        alert("@TempData["Message"]");
+    </script>
+}
 
 <style>
     body {
-       
-        background-image: url('https://img.freepik.com/free-vector/abstract-geometric-wireframe-background_52683-59421.jpg?w=1060&t=st=1688706348~exp=1688706948~hmac=62fdc45d9a61016854d45eb1f17e65959102b1a575f6f2c7fa3f12dcd21f30ed');
+        background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
     }
-
     .card {
         margin: 0 auto;
         margin-top: 50px;
@@ -17,7 +22,7 @@
         background-color: white;
         border: 1px solid rgba(0, 0, 0, 0.125);
         border-radius: 0.25rem;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 5px Grey;
         padding: 20px;
     }
 
