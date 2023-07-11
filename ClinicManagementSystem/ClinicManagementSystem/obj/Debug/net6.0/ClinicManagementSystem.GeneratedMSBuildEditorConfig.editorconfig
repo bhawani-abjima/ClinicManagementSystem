@@ -68,8 +68,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxFZGl0UGF0aWVudERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientAppointmentDetails.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50QXBwb2ludG1lbnREZXRhaWxzLmNzaHRtbA==
+[C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxQYXRpZW50QXBwb2ludG1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BhawaniSingh/Documents/GitHub/ClinicManagementSystem/ClinicManagementSystem/ClinicManagementSystem/Views/Patient/PatientLoginPortal.cshtml]
