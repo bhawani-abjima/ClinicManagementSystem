@@ -85,7 +85,7 @@ namespace ClinicManagementSystem.Repository
         }
 
 
-        public async Task<IEnumerable<BookAppointment>> PatientAppointmentData(string Email)
+        public async Task<Appointment> PatientAppointmentData(string Email)
         {
             try
             {
@@ -94,9 +94,9 @@ namespace ClinicManagementSystem.Repository
                     var dynamicParameters = new DynamicParameters();
                     dynamicParameters.Add("@PatientEmail", Email);
 
-                    var appointmentData = await connection.QueryAsync<BookAppointment>("GetPatientAppointmentByEmail", dynamicParameters, commandType: CommandType.StoredProcedure);
+                    var appointmentData = await connection.QueryAsync<Appointment>("GetPatientAppointmentByEmail", dynamicParameters, commandType: CommandType.StoredProcedure);
 
-                    return appointmentData.ToList();
+                    return (Appointment)appointmentData;
                 }
             }
             catch (Exception ex)

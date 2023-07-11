@@ -1,58 +1,66 @@
-﻿<style>
+﻿@model IEnumerable<ClinicManagementSystem.Models.Appointment>
+
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
+    }
+
     .appointment-table {
         width: 100%;
         table-layout: fixed;
     }
 
-       
-
     .active-button {
         background-color: deepskyblue;
         color: white;
-        height:40px;
+        height: 40px;
         padding: 0px 20px;
         border: none;
-        text-align:center;
+        text-align: center;
         border-radius: 4px;
         font-size: 18px;
         cursor: pointer;
     }
 </style>
 
-<div class="card appointment-card">
-    <div class="card-header">
-        <h5 class="card-title">Appointment Details</h5>
-    </div>
-    <div class="card-body">
-        @if (Model != null && Model.Count > 0)
-        {
-            <table class="appointment-table">
-                <thead>
-                    <tr>
-                        <th style="width: 25%;">Doctor Name</th>
-                        <th style="width: 25%;">Appointment Date</th>
-                        <th style="width: 25%;">Appointment Time</th>
-                        <th style="width: 25%;">Appointment Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var appointment in Model)
-                    {
+<body>
+    <div class="card appointment-card">
+        <div class="card-header">
+            <h5 class="card-title">Appointment Details</h5>
+        </div>
+        <div class="card-body">
+            @if (Model != null && Model.Count() > 0)
+            {
+                <table class="appointment-table">
+                    <thead>
                         <tr>
-                            <td>@appointment.DoctorName</td>
+                            <th style="width: 25%;">Doctor Name</th>
+                            <th style="width: 25%;">Appointment Date</th>
+                            <th style="width: 25%;">Appointment Time</th>
+                            <th style="width: 25%;">Disease Brief</th>
 
-                            <td>@appointment.AppointmentDate.ToShortDateString()</td>
-                            <td>@appointment.AppointmentTime</td>
-                            <td> <button class="active-button">Active</button></td>
-                           @* <td>@appointment.PatientEmail</td>*@
+                            <th style="width: 25%;">Appointment Status</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        }
-        else
-        {
-            <p>No appointments found.</p>
-        }
+                    </thead>
+                    <tbody>
+                        @foreach (var appointment in Model)
+                        {
+                            <tr>
+                                <td>@appointment.DoctorName</td>
+                                <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                                <td>@appointment.AppointmentTime</td>
+                                <td>@appointment.DiseaseBrief</td>
+                                <td>@appointment.AppointmentStatus</td>
+                                <td>@appointment.PatientEmail</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No appointments found.</p>
+            }
+        </div>
     </div>
-</div>
+</body>

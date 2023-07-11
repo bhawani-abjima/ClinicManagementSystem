@@ -7,7 +7,7 @@
     .card {
         background-color: white;
         margin: 0 auto;
-        width: 50%;
+        width: 80%;
         padding: 20px;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
@@ -44,72 +44,77 @@
     <h4 class="center">Appointment</h4>
     <hr />
     <div class="row">
-        <div class="col-md-4">
-            <form asp-action="AppointmentDetailsUpdated" asp-controller="Appointments" class="table">
+        <div class="col-md-12">
+            <form asp-action="AppointmentDetailsUpdated" asp-controller="Appointments">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="AppointmentId" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="AppointmentId" class="form-control" />
-                        <span asp-validation-for="AppointmentId" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="DoctorName" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="DoctorName" class="form-control" />
-                        <span asp-validation-for="DoctorName" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="AppointmentDate" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="AppointmentDate" class="form-control" />
-                        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="AppointmentTime" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="AppointmentTime" class="form-control" />
-                        <span asp-validation-for="AppointmentTime" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="PatientEmail" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="PatientEmail" class="form-control" />
-                        <span asp-validation-for="PatientEmail" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="form-group table-row">
-                    <div class="table-cell">
-                        <label asp-for="AppointmentStatus" class="control-label"></label>
-                    </div>
-                    <div class="table-cell">
-                        <input asp-for="AppointmentStatus" class="form-control" />
-                        <span asp-validation-for="AppointmentStatus" class="text-danger"></span>
-                    </div>
-                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label asp-for="AppointmentId" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="AppointmentId" class="form-control" />
+                                <span asp-validation-for="AppointmentId" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <label asp-for="DoctorName" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="DoctorName" class="form-control" />
+                                <span asp-validation-for="DoctorName" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="PatientEmail" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="PatientEmail" class="form-control" />
+                                <span asp-validation-for="PatientEmail" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <label asp-for="AppointmentDate" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="AppointmentDate" class="form-control" />
+                                <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="AppointmentTime" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="AppointmentTime" class="form-control" />
+                                <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+                            </td>
+                            <td>
+                                <label asp-for="AppointmentStatus" class="control-label"></label>
+                            </td>
+                            <td>
+                                <input asp-for="AppointmentStatus" class="form-control" />
+                                <span asp-validation-for="AppointmentStatus" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label asp-for="DiseaseBrief" class="control-label"></label>
+                            </td>
+                            <td colspan="5">
+                                <input asp-for="DiseaseBrief" class="form-control form-control-md" />
+                                <span asp-validation-for="DiseaseBrief" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <div class="form-group text-center">
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
-
             </form>
         </div>
     </div>
 </div>
-
 
 
 @section Scripts {

@@ -4,7 +4,7 @@ namespace ClinicManagementSystem.Models
 {
     public class DoctorModel
     {
-        public string DoctorId { get; set; }
+        //public string DoctorId { get; set; }
         public string? RegistrationNo { get; set; }
         public string? DoctorName { get; set; }
 
@@ -17,16 +17,16 @@ namespace ClinicManagementSystem.Models
 
         //using appointment details
 
-        public string? PatientEmail { get; set;}
+        //public string? PatientEmail { get; set;}
 
 
-        [DataType(DataType.Date)]
-        public DateTime AppointmentDate { get; set; }
+        //[DataType(DataType.Date)]
+        //public DateTime AppointmentDate { get; set; }
 
-        [DataType(DataType.Time)]
-        public TimeSpan AppointmentTime { get; set; }
+        //[DataType(DataType.Time)]
+        //public TimeSpan AppointmentTime { get; set; }
 
-        public String? DiseaseBrief { get; set; }
-
+        //public String? DiseaseBrief { get; set; }
+       
     }
 }

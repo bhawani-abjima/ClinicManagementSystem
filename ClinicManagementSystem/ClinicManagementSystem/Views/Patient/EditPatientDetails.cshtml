@@ -1,9 +1,12 @@
 ﻿@model ClinicManagementSystem.Models.PatientModel
 
 @{
-    ViewData["Title"] = "PatientRegistration";
+    ViewData["Title"] = "PatientDetailsUpdate";
 }
 <style>
+    body {
+        background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
+    }
     .form-container {
         background-color: aliceblue;
         padding: 20px;
@@ -16,11 +19,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title" style="text-align:center; font-size:30px;"><b>Patient Registration</b></div>
+                    <div class="card-title" style="text-align:center; font-size:30px;"><b>Patient Details Update</b></div>
                 </div>
                 <div class="card-body">
                     <div class="form-container">
-                        <form asp-action="PatientRegistration" asp-controller="Patient" method="post">
+                        <form asp-action="PatientdetailsUpdated" asp-controller="Patient" method="post">
                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                             <table class="table">
                                 <tr>
@@ -136,27 +139,17 @@
                                     <label asp-for="Height" class="control-label" style="font-weight:bold;"></label>
                                 </td>
                                 <td>
-                                    <select asp-for="Height" class="form-control">
-                                        <option value="">Select Height</option>
-                                        @for (int centimeters = 30; centimeters <= 300; centimeters++)
-                                        {
-                                            <option value="@centimeters.ToString() cm">@centimeters cm</option>
-                                        }
-                                    </select>
+                                    <input asp-for="Height" class="form-control" />
                                 </td>
                                 <td><span asp-validation-for="Height" class="text-danger"></span></td>
                                 <td>
                                     <label asp-for="Weight" class="control-label" style="font-weight:bold;"></label>
                                 </td>
                                 <td>
-                                    <select asp-for="Weight" class="form-control">
-                                        <option value="">Select Weight</option>
-                                        @for (int weight = 1; weight <= 100; weight++)
-                                        {
-                                            <option value="@weight.ToString() kg">@weight kg</option>
-                                        }
-                                    </select>
+                                    <input asp-for="Weight" class="form-control" />
                                 </td>
+
+
 
                                 <tr>
                                     <td><label asp-for="DiseaseBrief" class="control-label" style="font-weight:bold;"></label></td>

@@ -90,7 +90,7 @@ namespace ClinicManagementSystem.Controllers
             {
                 _doctor.UpdateDoctorDetails(doctorUpdate);
                 TempData["AlertMessage"] = "<script>alert('Doctor Details Updated Successfully!')</script>";
-                return RedirectToAction("AdminPortal", "Home");
+                return RedirectToAction("LoginUser", "Login");
             }
 
             return RedirectToAction("Maintenance", "Home");

@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "LoginUser";
+
 }
 @if (TempData["Message"] != null)
 {
@@ -10,7 +11,13 @@
         alert("@TempData["Message"]");
     </script>
 }
-
+@if (TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-warning" style="background-color:aliceblue; color:black; width:30%;margin-left:35%; text-align:center; font-weight:bold;">
+        <span> Sorry!! Invalid Credentials- @TempData["Error"] </span>
+            <script>alert(@TempData["Error"] < /)</script>
+    </div>
+}
 <style>
     body {
         background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');

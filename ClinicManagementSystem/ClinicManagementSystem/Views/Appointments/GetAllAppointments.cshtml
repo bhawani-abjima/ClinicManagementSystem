@@ -65,6 +65,7 @@
                     <th>Appointment Date</th>
                     <th>Appointment Time</th>
                     <th>Patient Email</th>
+                    <th>Disease Brief</th>
                     <th>Appointment Status</th>
                     <th>Actions</th>
                 </tr>
@@ -75,9 +76,10 @@
                     <tr>
                         <td>@appointment.AppointmentId</td>
                         <td>@appointment.DoctorName</td>
-                        <td>@appointment.AppointmentDate</td>
+                        <td>@appointment.AppointmentDate.ToShortDateString()</td>
                         <td>@appointment.AppointmentTime</td>
                         <td>@appointment.PatientEmail</td>
+                        <td>@appointment.DiseaseBrief</td>
                         <td>@appointment.AppointmentStatus</td>
                         <td>
                             <button class="btn btn-outline-secondary btn-lg" onclick="location.href='@Url.Action("AppointmentDetailsEditOption", "Appointments", new { id = appointment.AppointmentId })'" class="edit-button">

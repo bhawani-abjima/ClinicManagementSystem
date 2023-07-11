@@ -145,28 +145,15 @@
                                     <label asp-for="Height" class="control-label" style="font-weight:bold;"></label>
                                 </td>
                                 <td>
-                                    <select asp-for="Height" class="form-control">
-                                        <option value="">Select Height</option>
-                                        @for (int centimeters = 30; centimeters <= 300; centimeters++)
-                                        {
-                                            <option value="@centimeters.ToString() cm">@centimeters cm</option>
-                                        }
-                                    </select>
+                                    <input asp-for="Height" class="form-control" />
                                 </td>
                                 <td><span asp-validation-for="Height" class="text-danger"></span></td>
                                 <td>
                                     <label asp-for="Weight" class="control-label" style="font-weight:bold;"></label>
                                 </td>
                                 <td>
-                                    <select asp-for="Weight" class="form-control">
-                                        <option value="">Select Weight</option>
-                                        @for (int weight = 1; weight <= 100; weight++)
-                                        {
-                                            <option value="@weight.ToString() kg">@weight kg</option>
-                                        }
-                                    </select>
+                                    <input asp-for="Weight" class="form-control" />
                                 </td>
-
 
                                 <tr>
                                     <td><label asp-for="DiseaseBrief" class="control-label" style="font-weight:bold;"></label></td>

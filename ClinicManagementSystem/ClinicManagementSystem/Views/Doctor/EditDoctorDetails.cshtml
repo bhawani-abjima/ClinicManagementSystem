@@ -2,92 +2,105 @@
 @{
     ViewData["Title"] = "DoctorRegistration";
 }
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title text-center"><b>Doctor Profile Update</b></h2>
+<head>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title text-center"><b>Doctor Profile Update</b></h2>
+                    </div>
+                    <div class="card-body">
+                        <form asp-action="DoctorDetailsUpdated" asp-controller="Doctor" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>
+                                        <label asp-for="RegistrationNo" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="RegistrationNo" class="form-control" required />
+                                        <span asp-validation-for="RegistrationNo" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label asp-for="DoctorName" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="DoctorName" class="form-control" required />
+                                        <span asp-validation-for="DoctorName" class="text-danger"></span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <label asp-for="Email" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Email" class="form-control" required />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label asp-for="Specialities" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Specialities" class="form-control" required />
+                                        <span asp-validation-for="Specialities" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label asp-for="Experience" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Experience" class="form-control" required />
+                                        <span asp-validation-for="Experience" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label asp-for="Education" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Education" class="form-control" required />
+                                        <span asp-validation-for="Education" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label asp-for="Fees" class="control-label"></label>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Fees" class="form-control" required />
+                                        <span asp-validation-for="Fees" class="text-danger"></span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
-                <div class="card-body">
-                    <form asp-action="DoctorDetailsUpdated" asp-controller="Doctor" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <table class="table table-bordered">
-                            <tr>
-                                <td>
-                                    <label asp-for="RegistrationNo" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="RegistrationNo" class="form-control" required />
-                                    <span asp-validation-for="RegistrationNo" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label asp-for="DoctorName" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="DoctorName" class="form-control" required />
-                                    <span asp-validation-for="DoctorName" class="text-danger"></span>
-                                </td>
-                            </tr>
-                           
-                            <tr>
-                                <td>
-                                    <label asp-for="Email" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="Email" class="form-control" required />
-                                    <span asp-validation-for="Email" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label asp-for="Specialities" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="Specialities" class="form-control" required />
-                                    <span asp-validation-for="Specialities" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label asp-for="Experience" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="Experience" class="form-control" required />
-                                    <span asp-validation-for="Experience" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label asp-for="Education" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="Education" class="form-control" required />
-                                    <span asp-validation-for="Education" class="text-danger"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label asp-for="Fees" class="control-label"></label>
-                                </td>
-                                <td>
-                                    <input asp-for="Fees" class="form-control" required />
-                                    <span asp-validation-for="Fees" class="text-danger"></span>
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="form-group text-center">
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </form>
-                </div>
-                
             </div>
         </div>
     </div>
-</div>
+
+
+</body>
 
 @section Scripts {
     @{

@@ -33,7 +33,7 @@ namespace ClinicManagementSystem.Controllers
                     if (usertype == "Patient")
                     {
                         TempData["SuccessMessage"] = "Login Successful";
-                        return RedirectToAction("PatientLoginPortal","Home");
+                        return RedirectToAction("PatientLoginPortal", "Home");
                     }
                     else if (usertype == "Doctor")
                     {
@@ -45,13 +45,14 @@ namespace ClinicManagementSystem.Controllers
 
                         return RedirectToAction("AdminPortal", "Home");
                     }
-                    
+
                 }
 
 
             }
-            return RedirectToAction("Index", "Home");
-
+            TempData["AlertMessage"] = "Error";
+            return RedirectToAction("LoginUser", "Login");
+            
         }
     }
 }
