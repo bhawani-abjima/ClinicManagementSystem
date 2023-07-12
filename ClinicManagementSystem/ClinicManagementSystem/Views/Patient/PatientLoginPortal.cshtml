@@ -1,5 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
+
+@if (TempData["LoginMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success" style="background-color:aliceblue; color:black; width:30%;margin-left:35%; text-align:center; font-weight:bold;">
+        @TempData["LoginMessage"]
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var successMessage = $("#successMessage");
+            successMessage.delay(2000).fadeOut(500);
+        });
+    </script>
+}
+
 <head>
     <title>Login Patient</title>
 
@@ -11,14 +26,7 @@
 
 </head>
 <body>
-    @if (!string.IsNullOrEmpty(TempData["SuccessMessage"] as string))
-    {
-        <script>
-            window.onload = function () {
-                alert("@TempData["SuccessMessage"]");
-            };
-        </script>
-    }
+   
     <div class="row justify-content-md-center">
         <div class="col-md-5">
             <form action="/Patient/PatientLoginPortal" method="post">

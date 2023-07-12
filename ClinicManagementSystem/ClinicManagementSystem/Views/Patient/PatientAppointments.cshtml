@@ -1,60 +1,72 @@
-﻿@model ClinicManagementSystem.Models.Appointment
+﻿@model IEnumerable<ClinicManagementSystem.Models.Appointment>
 
 @{
     ViewData["Title"] = "PatientAppointments";
 }
 
-<h1>PatientAppointments</h1>
+<head>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
+        }
+
+        .appointment-table {
+            box-shadow:0 2px 2px Grey;
+            background-color: white;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .appointment-table th,
+            .appointment-table td {
+                padding: 10px;
+                border: 1px solid grey;
+                text-align: left;
+            }
+
+            .appointment-table th {
+                background-color: lightgray;
+            }
+
+        .appointment-status {
+            font-weight:bold;
+            color: darkviolet;
+        }
+    </style>
+</head>
 
 <div>
-    <h4>Appointment</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AppointmentId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AppointmentId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DoctorName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DoctorName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AppointmentDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AppointmentDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AppointmentTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AppointmentTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PatientEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PatientEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AppointmentStatus)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AppointmentStatus)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiseaseBrief)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiseaseBrief)
-        </dd>
-    </dl>
-</div>
-<div>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    <a asp-action="Index">Back to List</a>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="appointment-table">
+            <thead>
+                <tr>
+                    <th>Appointment Id</th>
+                    <th>Doctor Name</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Disease Brief</th>
+                    <th>Appointment Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in Model)
+                {
+                    <tr>
+                        <td>@appointment.AppointmentId AA0101</td>
+                        <td>@appointment.DoctorName</td>
+                        <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                        <td>@appointment.AppointmentTime</td>
+                        <td>@appointment.DiseaseBrief</td>
+                        <td><button><span class="appointment-status">@appointment.AppointmentStatus</span></button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No appointments found.</p>
+    }
 </div>

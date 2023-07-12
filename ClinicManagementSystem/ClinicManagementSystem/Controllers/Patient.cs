@@ -61,7 +61,7 @@ namespace ClinicManagementSystem.Controllers
             try
             {
                 var patientappointment = await _patient.PatientAppointmentData(Email);
-                return View("~/Views/Patient/PatientAppointmentDetails.cshtml", patientappointment);
+                return View("~/Views/Patient/PatientAppointments.cshtml", patientappointment);
 
             }
             catch (Exception)

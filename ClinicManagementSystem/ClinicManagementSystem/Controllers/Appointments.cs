@@ -54,7 +54,7 @@ namespace ClinicManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 _appointment.UpdateAppointmentDetails(Update);
-                TempData["AlertMessage"] = "<script>alert('Appointment Details Updated Successfully!')</script>";
+                TempData["AppointMessage"] = "Appointment Details Updated Successfully!";
                 return RedirectToAction("AdminPortal", "Home");
             }
 

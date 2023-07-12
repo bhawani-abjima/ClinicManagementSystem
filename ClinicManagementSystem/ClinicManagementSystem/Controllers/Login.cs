@@ -50,7 +50,7 @@ namespace ClinicManagementSystem.Controllers
 
 
             }
-            TempData["AlertMessage"] = "Error";
+            TempData["AlertMessage"] = "Invalid Credentials";
             return RedirectToAction("LoginUser", "Login");
             
         }

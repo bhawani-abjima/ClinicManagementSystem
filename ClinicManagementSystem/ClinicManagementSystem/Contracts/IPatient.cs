@@ -9,7 +9,7 @@ namespace ClinicManagementSystem.Contracts
 
         Task<PatientModel> PatientPortalData(string PatientEmail);
 
-        Task<Appointment> PatientAppointmentData(string Email);
+        Task<IEnumerable<Appointment>> PatientAppointmentData(string Email);
 
         Task<PatientModel> PatientEditPortal(string PatientEmail);
 

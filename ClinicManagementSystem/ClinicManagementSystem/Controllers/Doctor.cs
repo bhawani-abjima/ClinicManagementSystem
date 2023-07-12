@@ -89,7 +89,7 @@ namespace ClinicManagementSystem.Controllers
             if (ModelState.IsValid)
             {
                 _doctor.UpdateDoctorDetails(doctorUpdate);
-                TempData["AlertMessage"] = "<script>alert('Doctor Details Updated Successfully!')</script>";
+                TempData["AlertMessage"] = "Doctor Details Updated Successfully!";
                 return RedirectToAction("LoginUser", "Login");
             }
 

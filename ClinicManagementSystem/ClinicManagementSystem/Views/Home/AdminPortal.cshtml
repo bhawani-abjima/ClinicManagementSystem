@@ -3,7 +3,19 @@
     ViewBag.Title = "Welcome to Admin Portal";
 }
 
-@Html.Raw(TempData["AlertMessage"])
+@if (TempData["AppointMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success" style="background-color:aliceblue; color:black; width:30%;margin-left:35%; text-align:center; font-weight:bold;">
+        @TempData["AppointMessage"]
+    </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var successMessage = $("#successMessage");
+                successMessage.delay(2000).fadeOut(500);
+            });
+        </script>   
+}
 
 <head>
     <style>

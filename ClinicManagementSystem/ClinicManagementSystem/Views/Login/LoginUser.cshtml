@@ -13,11 +13,21 @@
 }
 @if (TempData["AlertMessage"] != null)
 {
-    <div class="alert alert-warning" style="background-color:aliceblue; color:black; width:30%;margin-left:35%; text-align:center; font-weight:bold;">
-        <span> Sorry!! Invalid Credentials- @TempData["Error"] </span>
-            <script>alert(@TempData["Error"] < /)</script>
+    <div id="successMessage" class="alert alert-success" style="background-color:aliceblue; color:black; width:30%;margin-left:35%; text-align:center; font-weight:bold;">
+        @TempData["AlertMessage"]
     </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var successMessage = $("#successMessage");
+                successMessage.delay(2000).fadeOut(500);
+            });
+        </script>
+       
 }
+<head>
+
+
 <style>
     body {
         background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
@@ -55,9 +65,9 @@
 </style>
 
 
+</head>
 
-
-
+<body>
 <div class="card">
     <div class="card-title text-center">
         <img src="https://cdn-icons-png.flaticon.com/512/3293/3293466.png" style="width: 100px; height: 100px;" />
@@ -101,7 +111,7 @@
     </form>
 </div>
 
-
+</body>
 
 @section Scripts {
     @{

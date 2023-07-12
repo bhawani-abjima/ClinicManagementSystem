@@ -5,9 +5,6 @@
     <style>
         body {
             background-image: url('https://img.freepik.com/free-vector/medical-healthcare-blue-color_1017-26807.jpg?w=1060&t=st=1688727612~exp=1688728212~hmac=105f48e0024b044be79bd80c9bf543df638d1f2957926d76337b524b38cc0309');
-           
-            
-        
         }
 
         .container {
@@ -40,7 +37,6 @@
 
         .card-body {
             background-color: floralwhite;
-          
             height: calc(100% - 40px);
             display: flex;
             flex-direction: column;
@@ -55,7 +51,6 @@
             background-color: lightskyblue;
             border: 1px solid black;
             border-radius: 5px;
-
             padding: 5px;
         }
 
@@ -167,7 +162,6 @@
             font-weight: bold;
         }
 
-
         .fixed-container {
             position: fixed;
             top: 50%;
@@ -175,7 +169,6 @@
             transform: translate(-50%, -50%);
         }
     </style>
-
 </head>
 <body>
     <div class="container">
@@ -190,7 +183,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <img src="https://i.pinimg.com/originals/64/34/d7/6434d72ce9e16251c4f41f4e5a146567.png" class="img" alt="Sample Image" class="card-image">
-                                        <h3 class="card-title">@doctor.DoctorName</h3>
+                                        <div class="card-title">@doctor.DoctorName</div>
                                         <div class="form-group">
                                             <label><b>Registration Number:</b></label>
                                             <span class="form-head regis">@doctor.RegistrationNo</span>
