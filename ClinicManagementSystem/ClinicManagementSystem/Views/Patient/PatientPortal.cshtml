@@ -1,6 +1,6 @@
 ﻿@model ClinicManagementSystem.Models.PatientModel
 @{
-    ViewData["Title"] = "Patient Details";
+    ViewData["Title"] = "Doctor Details";
 }
 
 <!DOCTYPE html>
@@ -109,6 +109,7 @@
 
         .additional-card {
             width: 200px;
+            color:blue;
             height:135px;
             box-shadow: 0 1px 2px grey;
             background-color: white;
@@ -208,13 +209,15 @@
                             <a href="@Url.Action("PatientAppointments", "Patient", new { Email = Model.Email })">My Appointment</a>
 
                         </div>
-                        <a href="https://www.apollopharmacy.in/?msclkid=9b979044a6ee1cfb09e8f4d196c615e7&utm_source=bing&utm_medium=cpc&utm_campaign=Apollo_Pharmacy_Non-Brand_RestCities_New&utm_term=buy%20medicine%20online%20in%20india&utm_content=Medicine%20Online%20EM" class="additional-card">
-                            Buy Medicine
-                        </a>
+                        <div class="additional-card" onclick ="location.href='@Url.Action("Maintenance", "Home")'">
+                                Buy Medicine 
 
-                        <a href="https://deepai.org/chat" class="additional-card">
-                            Chat With US
-                        </a>
+                        </div>
+
+                        <div class="additional-card" onclick ="location.href='@Url.Action("Maintenance", "Home")'">
+                                Chat With US
+                        </div>
+                            
                     </div>
 
                 <div class="card-body d-flex justify-content-center">

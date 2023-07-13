@@ -32,13 +32,13 @@ namespace ClinicManagementSystem.Controllers
                     string usertype = loginCredentials.UserType;
                     if (usertype == "Patient")
                     {
-                        TempData["SuccessMessage"] = "Login Successful";
-                        return RedirectToAction("PatientLoginPortal", "Home");
+                        TempData["LoginMessage"] = "Login Successful";
+                        return RedirectToAction("PatientPortal", "Home");
                     }
                     else if (usertype == "Doctor")
                     {
 
-                        return RedirectToAction("DoctorLoginPortal", "Home");
+                        return RedirectToAction("DoctorPortal", "Home");
                     }
                     else if (usertype == "Admin")
                     {
